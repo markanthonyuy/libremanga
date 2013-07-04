@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Libre Manga | Free Manga Reader</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/css/index.css" rel="stylesheet"/>
+</head>
+<body>
+	<div id="wrap">
+		<aside class="" id="sidebar">
+		<!--Sidebar content-->
+			<h3><a href="#">Manga List</a></h3>
+			<ul id="manga_list">
+				<li><a href="#" class="manga" data-id="4e70ea03c092255ef70046f0">Naruto</a></li>
+				<li><a href="#" class="manga" data-id="4e70e9efc092255ef7004274">Bleach</a></li>
+				<li><a href="#" class="manga" data-id="4e70ea10c092255ef7004aa2">One Piece</a></li>
+				<li><a href="#" class="manga" data-id="4e70ea0cc092255ef70049ac">Detective Conan</a></li>
+				<li><a href="#" class="manga" data-id="4e70e9ecc092255ef700415c">Get Backers</a></li>
+				<li><a href="#" class="manga" data-id="4e70e9fdc092255ef700454c">GTO</a></li>
+				<li><a href="#" class="manga" data-id="4e70ea02c092255ef70046e0">Hunter x Hunter</a></li>
+				<li><a href="#" class="manga" data-id="4e70ea14c092255ef7004be8">Hajime no Ippo</a></li>
+				<li><a href="#" class="manga" data-id="4e70ea60c092255ef700672e">Dragon Ball SD</a></li>
+				<li><a href="#" class="manga" data-id="4e70ea0cc092255ef7004966">Toriko</a></li>
+				<li><a href="#" class="manga" data-id="4e70ea0fc092255ef7004a61">Slam Dunk</a></li>
+				<li><a href="#" class="manga" data-id="4e70ea03c092255ef7004716">Beelzebub</a></li>
+				<li><a href="#" class="manga" data-id="4e70ea02c092255ef70046d6">History's Strongest Disciple Kenichi</a></li>
+				<li><a href="#" class="manga" data-id="4e70e9f8c092255ef7004410">Pokemon Adventure</a></li>
+				<li><a href="#" class="manga" data-id="4e70e91dc092255ef7001733">Hell Teacher Nube</a></li>
+				<li><a href="#" class="manga" data-id="4e70e9f9c092255ef700442c">Flame Of Recca</a></li>
+				<li><a href="#" class="manga" data-id="4e70ea60c092255ef7006732">Rock Lee's Springtime of Youth</a></li>
+			</ul>
+			<footer id="main_footer">
+				<span class="container">Copyright 2013 - Libre Manga | <a href="#disclaimer" role="button" data-toggle="modal">Disclaimer</a> | <a href="#about" role="button" data-toggle="modal">About</a> </span>
+				
+			</footer>
+		</aside>
+		<section class="" id="content">
+			<header id="main_header">
+				<h1 class="main_heading">Libre Manga</h1>
+				<h2 class="main_description">Get the your favorite manga for free. Read the latest release here first! Straight from our source japanese manga source. We've handpicked the best manga in japan. So if your manga is part of the list then you are lucky! What makes Libre Manga stands out from other manga fan site? Libre Manga is simple, fast, updated, secure and free. Enjoy!</h2>
+				<p class="shoutout">
+					<span>Go on. Don't be shy. Spread the word!</span>
+					<a href="#" class="facebook"><span>Facebook </span></a>
+					<a href="#" class="twitter"><span>Twitter</span></a>
+					<a href="#" class="pinterest"><span>Pinterest</span></a>
+				</p>
+			</header>
+			<!-- <p class="loader"><img src="assets/img/ajax-loader.gif" alt="loading"></p> -->
+			<div class="loader">
+				<div class="spinner"></div>
+				<span>loading...</span>
+			</div>
+
+			<div id="disclaimer" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="disclaimer" aria-hidden="true">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+					<h3 id="disclaimer_label">Disclaimer</h3>
+				</div>
+				<div class="modal-body">
+					<p>I do not own any images or information about any manga's published in this site, I am simply getting all the data from our beloved API source provided by <a href="http://www.mangaeden.com/api/">Mangaeden</a>. Copyrights and trademarks for the manga, and other promotional materials are held by their respective owners and their use is allowed under the fair use clause of the Copyright Law. If you have any suggestion, comments or if any images that appeared on my blog are in violation of copyright law please do email me at <b>macmac[dot]uy[at]gmail[dot]com</b></p> 
+				</div>
+				<div class="modal-footer">
+					Salamat po! (Thank you!)
+				</div>
+			</div>
+
+			<div id="about" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="about" aria-hidden="true">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+					<h3 id="about_label">About Libre Manga</h3>
+				</div>
+				<div class="modal-body">
+					<p>Libre Manga is inspired by Kevin and Raven idea of manga reader web app, I develop Libre Manga using bunch of front-end library/framework like Jquery, Twitter Bootstrap, Underscorejs and Sass. All buttons, preloader and animations are made with CSS3 inspired by Codrops</p> 
+				</div>
+				<div class="modal-footer">
+					This site is develop and maintained by Mark Anthony Uy.
+				</div>
+			</div>
+		</section>
+	</div>
+	<script src="assets/js/lib/underscore-1.4.4.js"></script>
+	<script src="assets/js/lib/jquery-2.0.2.js"></script>
+	<script src="assets/js/lib/backbone-1.0.0.js"></script>
+	<script src="assets/js/lib/bootstrap-2.3.2.js"></script>
+	<script type="text/template" id="manga_details">
+		<section id="manga_details_wrap">
+			<h3><%= title %></h3>
+			<p><%= description %></p>
+			<p><img src="http://cdn.mangaeden.com/mangasimg/<%= image %>" alt="<%= title %>"></p>
+			<p>
+				<span>Created By - <%= author %></span>
+			</p>
+			<ul>
+				<% _.each(chapters, function(item) { %>
+					<%
+						var formatDate = new Date(item[1] * 1000),
+							month = formatDate.getMonth() + 1,
+							day = formatDate.getDate(),
+							year = formatDate.getFullYear(),
+							real_month = (month < 10) ? '0' + month : month;
+							real_day = (day < 10) ? '0' + day : day;
+					%>
+					<li><a href="#" data-id="<%= item[3] %>" class="manga_chapter">Chapter <%= item[0] %></a> - <%= real_month %>/<%= real_day %>/<%= year %> 
+						<% if(item[2] == null || item[2] == '' || $.isNumeric(item[2])) { %> 
+							<b>(No Title)</b>
+						<% } else { %>
+							<b><%= (item[2]) %></b>
+						<% } %>
+					</li>
+				<% }); %>
+			</ul>
+		</section>
+	</script>
+	<script src="assets/js/index.js"></script>
+</body>
+</html>

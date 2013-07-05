@@ -5285,11 +5285,10 @@ html {
       overflow: auto;
       height: 100%;
       width: 100%; }
-
-#wrap:after {
-  content: '';
-  clear: both;
-  display: block; }
+      html body #wrap:after {
+        content: '';
+        clear: both;
+        display: block; }
 
 .current {
   color: #000;

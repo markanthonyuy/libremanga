@@ -29,6 +29,7 @@
 				<li><a href="#" class="manga" data-id="4e70e9f9c092255ef700442c">Flame Of Recca</a></li>
 				<li><a href="#" class="manga" data-id="4e70ea60c092255ef7006732">Rock Lee's Springtime of Youth</a></li>
 				<li><a href="#" class="manga" data-id="4e70ea1dc092255ef7004d5c">Fairy Tail</a></li>
+				<li><a href="#" class="manga" data-id="4e70ea00c092255ef700461c">Katekyo Hitman Reborn</a></li>
 			</ul>
 			<footer id="main_footer">
 				<span class="container">Copyright 2013 - Libre Manga | <a href="#disclaimer" role="button" data-toggle="modal">Disclaimer</a> | <a href="#about" role="button" data-toggle="modal">About</a> </span>
@@ -85,11 +86,15 @@
 	<script type="text/template" id="manga_details">
 		<section id="manga_details_wrap">
 			<h3><%= title %></h3>
-			<p><%= description %></p>
-			<p><img src="http://cdn.mangaeden.com/mangasimg/<%= image %>" alt="<%= title %>"></p>
-			<p>
-				<span>Created By - <%= author %></span>
-			</p>
+			<div class="manga_details">
+				<img src="http://cdn.mangaeden.com/mangasimg/<%= image %>" alt="<%= title %>">
+				<p class="manga_desc">
+					<%= description %>
+				</p>
+				<p>
+					<span><b>Created By</b> - <%= author %></span>
+				</p>
+			</div>
 			<ul>
 				<% _.each(chapters, function(item) { %>
 					<%

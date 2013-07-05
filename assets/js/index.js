@@ -94,7 +94,7 @@
 	var scrollPage = function() {
 		var sy = scrollY(),
 			$fixedHeader = $('#manga_details_wrap h3');
-
+		console.log(sy);
 		if (sy >= changeHeaderOn ) {
 			$fixedHeader.addClass('fixed_top');
 		}
@@ -112,7 +112,7 @@
 		console.log('scrolling');
 		if(!didScroll) {
 			didScroll = true;
-			setTimeout(scrollPage, 250);
+			scrollPage();
 		}
 	});
 

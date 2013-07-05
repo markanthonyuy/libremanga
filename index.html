@@ -95,7 +95,8 @@
 					<span><b>Created By</b> - <%= author %></span>
 				</p>
 			</div>
-			<ul>
+			<h4>Chapters (Latest First)</h4>
+			<ul class="manga_chapters">
 				<% _.each(chapters, function(item) { %>
 					<%
 						var formatDate = new Date(item[1] * 1000),

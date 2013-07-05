@@ -5349,7 +5349,7 @@ html {
       margin: 10px 10px 10px 0; }
     #content #main_header #manga_details_wrap .manga_details .manga_desc {
       text-indent: 30px;
-      margin-top: 20px; }
+      margin-top: 10px; }
     #content #main_header #manga_details_wrap .manga_details:after {
       content: '';
       clear: both;

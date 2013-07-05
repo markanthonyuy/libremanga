@@ -88,7 +88,7 @@
 
 	// Inspired from codrops
 	var didScroll = false,
-		changeHeaderOn = 10,
+		changeHeaderOn = 5,
 		$content = $('#wrap');
 
 	var scrollPage = function() {

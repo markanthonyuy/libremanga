@@ -5335,6 +5335,25 @@ html {
     margin: 50px;
     font-size: 100px;
     line-height: 100px; }
+  #content #main_header #manga_details_wrap h3 {
+    padding: 0;
+    margin: 0; }
+  #content #main_header #manga_details_wrap .manga_details {
+    display: block;
+    overflow: auto; }
+    #content #main_header #manga_details_wrap .manga_details img {
+      background: #eee;
+      border: 1px solid #bbbbbb;
+      float: left;
+      padding: 5px;
+      margin: 10px 10px 10px 0; }
+    #content #main_header #manga_details_wrap .manga_details .manga_desc {
+      text-indent: 30px;
+      margin-top: 20px; }
+    #content #main_header #manga_details_wrap .manga_details:after {
+      content: '';
+      clear: both;
+      display: block; }
   #content #main_header .shoutout {
     margin-top: 80px;
     text-align: center; }
@@ -5423,14 +5442,12 @@ html {
         transform: translateY(2%); }
 
 .fixed_top {
-  /*-webkit-transition: height 1s;
-     -moz-transition: height 1s;
-  		transition: height 1s;*/
+  /*-webkit-transition: height 0.2s;
+     -moz-transition: height 0.2s;
+  		transition: height 0.2s;*/
   background: #fff;
   position: fixed;
-  top: -10px;
   height: 39px;
-  margin-bottom: 1px;
   width: 73%;
   border-bottom: 1px solid #cccccc; }
   .fixed_top:after {

@@ -5354,6 +5354,15 @@ html {
       content: '';
       clear: both;
       display: block; }
+  #content #main_header #manga_details_wrap .manga_chapters {
+    margin-left: 0;
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4; }
+    #content #main_header #manga_details_wrap .manga_chapters li:nth-child(odd) {
+      background: #e1e1e1; }
+    #content #main_header #manga_details_wrap .manga_chapters li:nth-child(even) {
+      background: #fff; }
   #content #main_header .shoutout {
     margin-top: 80px;
     text-align: center; }

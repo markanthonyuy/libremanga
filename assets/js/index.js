@@ -57,19 +57,23 @@
 	});*/
 
 	// Constant Variables
-
 	var MANGA_API_URL = 'http://www.mangaeden.com/api/manga/',
 		MANGA_CHAPTER_API_URL = 'http://www.mangaeden.com/api/chapter/';
 
+	// PREFIX jQuery variables with $ (dollar sign)
 	var $headerContent = $('#main_header'),
 		$loader = $('.loader'),
+		$mangaList = $('#manga_list'),
 		mangaCache = {}; // Cache manga
 
 
+	// Append manga info to the DOM
 	var showMangaInfo = function(data) {
 		$headerContent.append(_.template($('#manga_details').html(), data));
 	};
 
+	// TODO: Add image gallery
+	
 	var viewChapterClickEvent = function(classname) {
 		$('a.' + classname).on('click', function(e) {
 			e.preventDefault();
@@ -110,6 +114,13 @@
 		return $content.scrollTop();
 	};
 
+	var processManga = function(manga, button) {
+		$loader.hide(); 						// Hides loader
+		$mangaList.removeClass('disable_dom');  // Disable the click/pointer event in mangaList
+		button.removeClass('loading');			// Remove loading class
+		showMangaInfo(manga);					// Show manga
+	};
+
 	var init = function() {
 
 		// Bind scrolling event		
@@ -123,11 +134,10 @@
 
 		$loader.hide(); // Hide loader on load page
 
-		// TODO: Disabled sidebar or manga list link on ajax loading to prevent dom content stack up.
+		// DONE: Disabled sidebar or manga list link on ajax loading to prevent dom content stack up.
 		// TODO: Image caching in localstorage or sessionstorage
 		// TODO: Add latest release date on sidebar 
 		// TODO: Store api on json text file
-		// TODO: Add image gallery
 		// TODO: Integrage Backbone MVC
 		
 		// Add function to click event
@@ -136,22 +146,25 @@
 
 			$headerContent.empty();
 			$loader.show();
+			$mangaList.addClass('disable_dom');
 
-			var _this = $(this),
-				mangaID = _this.data('id');
+			var _this = $(this),			// Cache self
+				mangaID = _this.data('id'); // Cache manga id
 
+			// Remove class 'current' in all list
 			_.each($('a.manga'), function(value, key, list) {
 				if(list.hasClass('current')) {
 					list.removeClass('current');
 				}
 			});	
-
-			_this.addClass('current');
+			
+			_this.addClass('current'); // Add class 'current' to self
+			_this.addClass('loading'); // Add class 'loading' to self
 
 			// Check if manga is in cache, if TRUE load the cache and prevent from calling API again
 			if(mangaID in mangaCache) {
-				$loader.hide();
-				showMangaInfo(mangaCache[mangaID]);
+				processManga(mangaCache[mangaID], _this);	// Show manga from cache
+				viewChapterClickEvent('manga_chapter');		// Add click event to chapters
 			} else {
 
 				// Call API
@@ -160,12 +173,11 @@
 					type 	: 'GET',
 					dataType: 'json',
 					success : function(res) {
-						mangaCache[mangaID] = res; // save to cache
+						mangaCache[mangaID] = res; // save manga to cache object
 					}
 				}).done(function(data, status) {
 					if(status == 'success') {
-						$loader.hide();
-						showMangaInfo(data);
+						processManga(data, _this);
 						viewChapterClickEvent('manga_chapter');
 					}
 				});

@@ -98,6 +98,20 @@ html {
 	}
 }
 
+.big_modal {
+	width:940px !important;
+	top:10px !important;
+	margin-left: -470px !important;
+	.modal-body {
+		max-height: 500px;
+	}
+}
+
+.manga_chapter_image_holder {
+	list-style: none;
+	text-align: center;
+}
+
 #sidebar {
 	background: desaturate(#eee, 50%);
 	float: left;

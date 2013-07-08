@@ -264,11 +264,12 @@ html {
 	height:39px;
 	width: 73%;
 	border-bottom: 1px solid #ccc;
-	&::after {
-		font-family: 'Trade Winds', arial; 
-		content:' - Libre Manga';
+	h3 {
+			&::after {
+			font-family: 'Trade Winds', arial; 
+			content:' - Libre Manga';
+		}
 	}
-	
 }
 
 @-webkit-keyframes rota {

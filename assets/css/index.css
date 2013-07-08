@@ -5504,7 +5504,7 @@ html {
   height: 39px;
   width: 73%;
   border-bottom: 1px solid #cccccc; }
-  .fixed_top::after {
+  .fixed_top h3::after {
     font-family: "Trade Winds", arial;
     content: ' - Libre Manga'; }
 

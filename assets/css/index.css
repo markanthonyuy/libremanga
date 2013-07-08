@@ -5296,6 +5296,12 @@ html {
   cursor: default;
   text-decoration: none; }
 
+.disable_dom {
+  pointer-events: none; }
+
+.loading::after {
+  content: ' (loading...)'; }
+
 #sidebar {
   background: #eeeeee;
   float: left;
@@ -5373,10 +5379,10 @@ html {
           #content #main_header #manga_details_wrap header ul li a .expand::after {
             content: '-'; }
         #content #main_header #manga_details_wrap header ul li a:hover .expand {
-          left: -100px;
-          width: 100px; }
+          left: -80px;
+          width: 80px; }
         #content #main_header #manga_details_wrap header ul li a:nth-child(n+1):hover {
-          margin-left: 90px; }
+          margin-left: 80px; }
   #content #main_header #manga_details_wrap header::after {
     content: '';
     display: block;

@@ -88,6 +88,16 @@ html {
 	text-decoration: none;
 }
 
+.disable_dom {
+	pointer-events:none;
+}
+
+.loading {
+	&::after {
+		content: ' (loading...)';
+	}
+}
+
 #sidebar {
 	background: desaturate(#eee, 50%);
 	float: left;
@@ -180,13 +190,13 @@ html {
 							}
 							&:hover {
 								.expand {
-									left:-100px;
-									width:100px;
+									left:-80px;
+									width:80px;
 								}
 							}
 							&:nth-child(n+1) {
 								&:hover {
-									margin-left: 90px;
+									margin-left: 80px;
 								}
 							}
 						}

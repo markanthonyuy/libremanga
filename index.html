@@ -41,6 +41,8 @@
 				<li><a href="#" class="manga" data-id="4e70e9fdc092255ef700453c">20th Century Boys</a></li>
 				<li><a href="#" class="manga" data-id="4e70ea08c092255ef700483f">Beck</a></li>
 				<li><a href="#" class="manga" data-id="4e70ea04c092255ef700473e">Rurouni Kenshin</a></li>
+				<li><a href="#" class="manga" data-id="4e70ea13c092255ef7004bb2">Yakitate Japan</a></li>
+				<li><a href="#" class="manga" data-id="4e70e9dec092255ef7003d75">New Grappler Baki</a></li>
 				<li><a href="#" class="manga" data-id="4e70ea03c092255ef70046f4">Tenjou Tenge</a></li>
 			</ul>
 			<footer id="main_footer">
@@ -55,7 +57,7 @@
 					<span>Go on. Don't be shy. Spread the word!</span>
 					<a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flibremanga.tk" class="facebook"><span>Facebook </span></a>
 					<a href="#" class="twitter"><span>Twitter</span></a>
-					<a href="#" class="pinterest"><span>Pinterest</span></a>
+					<a href="#" class="pinterest"><span>Google +</span></a>
 				</p>
 			</header>
 			<!-- <p class="loader"><img src="assets/img/ajax-loader.gif" alt="loading"></p> -->
@@ -97,7 +99,14 @@
 	<script src="assets/js/lib/bootstrap-2.3.2.js"></script>
 	<script type="text/template" id="manga_details">
 		<section id="manga_details_wrap">
-			<h3><%= title %></h3>
+			<header>
+				<h3><%= title %></h3>
+				<ul>
+					<li><a href="#">F<span class="expand">Like Us</span></a></li>
+					<li><a href="#">T<span class="expand">Tweet Us</span></a></li>
+					<li><a href="#">G<span class="expand">+1 Us</span></a></li>
+				</ul>
+			</header>
 			<div class="manga_details">
 				<img src="http://cdn.mangaeden.com/mangasimg/<%= image %>" alt="<%= title %>">
 				<p class="manga_desc">

@@ -72,7 +72,7 @@ html {
 		 #wrap {
 		 	overflow: auto;
 			@include occupy_screen;
-			&:after {
+			&::after {
 				content: '';
 				clear:both;
 				display: block;
@@ -135,9 +135,69 @@ html {
 	}
 	#main_header {
 		#manga_details_wrap {
-			h3 {
-				padding: 0;
-				margin: 0;
+			header {
+				h3 {
+					float:left;
+					padding: 0;
+					margin: 0;
+				}
+				ul {
+					float: right;
+					padding:8px;
+					list-style: none;
+					li {
+						float:left;
+						margin-right: 5px;
+						&:last-child {
+							margin-right:0;
+						}
+						a {
+							font-family: 'Share', arial; 
+							font-size: 20px;
+							line-height: 20px;
+							position: relative;
+							-webkit-transition: all 0.5s;
+							   -moz-transition: all 0.5s;
+									transition: all 0.5s;
+							.expand {
+								background: #fff;
+								font-size: 20px;
+								line-height: 20px;
+								left:0;
+								top:2px;
+								position: absolute;
+								overflow: hidden;
+								width:0;
+								height:auto;
+								text-align: right;
+								white-space: nowrap;
+								-webkit-transition: all 1s;
+								   -moz-transition: all 1s;
+										transition: all 1s;
+								&::after {
+									content:'-';
+								}
+							}
+							&:hover {
+								.expand {
+									left:-100px;
+									width:100px;
+								}
+							}
+							&:nth-child(n+1) {
+								&:hover {
+									margin-left: 90px;
+								}
+							}
+						}
+					}
+					
+				}
+				&::after {
+					content: '';
+					display: block;
+					clear: both;
+				}
 			}
 			.manga_details {
 				display: block;
@@ -151,9 +211,13 @@ html {
 				}
 				.manga_desc {
 					text-indent: 30px;
-					margin-top:10px;
+					margin-top:20px;
+					&:first-letter {
+						font-size:36px;
+					}
+					
 				}
-				&:after {
+				&::after {
 					content: '';
 					clear:both;
 					display: block;
@@ -200,7 +264,7 @@ html {
 	height:39px;
 	width: 73%;
 	border-bottom: 1px solid #ccc;
-	&:after {
+	&::after {
 		font-family: 'Trade Winds', arial; 
 		content:' - Libre Manga';
 	}

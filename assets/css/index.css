@@ -5285,7 +5285,7 @@ html {
       overflow: auto;
       height: 100%;
       width: 100%; }
-      html body #wrap:after {
+      html body #wrap::after {
         content: '';
         clear: both;
         display: block; }
@@ -5334,9 +5334,53 @@ html {
     margin: 50px;
     font-size: 100px;
     line-height: 100px; }
-  #content #main_header #manga_details_wrap h3 {
+  #content #main_header #manga_details_wrap header h3 {
+    float: left;
     padding: 0;
     margin: 0; }
+  #content #main_header #manga_details_wrap header ul {
+    float: right;
+    padding: 8px;
+    list-style: none; }
+    #content #main_header #manga_details_wrap header ul li {
+      float: left;
+      margin-right: 5px; }
+      #content #main_header #manga_details_wrap header ul li:last-child {
+        margin-right: 0; }
+      #content #main_header #manga_details_wrap header ul li a {
+        font-family: "Share", arial;
+        font-size: 20px;
+        line-height: 20px;
+        position: relative;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        transition: all 0.5s; }
+        #content #main_header #manga_details_wrap header ul li a .expand {
+          background: #fff;
+          font-size: 20px;
+          line-height: 20px;
+          left: 0;
+          top: 2px;
+          position: absolute;
+          overflow: hidden;
+          width: 0;
+          height: auto;
+          text-align: right;
+          white-space: nowrap;
+          -webkit-transition: all 1s;
+          -moz-transition: all 1s;
+          transition: all 1s; }
+          #content #main_header #manga_details_wrap header ul li a .expand::after {
+            content: '-'; }
+        #content #main_header #manga_details_wrap header ul li a:hover .expand {
+          left: -100px;
+          width: 100px; }
+        #content #main_header #manga_details_wrap header ul li a:nth-child(n+1):hover {
+          margin-left: 90px; }
+  #content #main_header #manga_details_wrap header::after {
+    content: '';
+    display: block;
+    clear: both; }
   #content #main_header #manga_details_wrap .manga_details {
     display: block;
     overflow: auto; }
@@ -5348,8 +5392,10 @@ html {
       margin: 10px 10px 10px 0; }
     #content #main_header #manga_details_wrap .manga_details .manga_desc {
       text-indent: 30px;
-      margin-top: 10px; }
-    #content #main_header #manga_details_wrap .manga_details:after {
+      margin-top: 20px; }
+      #content #main_header #manga_details_wrap .manga_details .manga_desc:first-letter {
+        font-size: 36px; }
+    #content #main_header #manga_details_wrap .manga_details::after {
       content: '';
       clear: both;
       display: block; }
@@ -5458,7 +5504,7 @@ html {
   height: 39px;
   width: 73%;
   border-bottom: 1px solid #cccccc; }
-  .fixed_top:after {
+  .fixed_top::after {
     font-family: "Trade Winds", arial;
     content: ' - Libre Manga'; }
 

@@ -1,0 +1,258 @@
+@import 'lib/bootstrap';
+@import 'lib/vars';
+
+@mixin prefix_translate_y($value: '10%') {
+	-webkit-transform: translateY($value);
+	   -moz-transform: translateY($value);
+	        transform: translateY($value);
+}
+
+@-webkit-keyframes shiver {
+	25% { @include prefix_translate_y(4%);}
+	50% { @include prefix_translate_y(-4%);}
+	75% { @include prefix_translate_y(2%);}
+	100% { @include prefix_translate_y(-2%);}
+}
+
+@-moz-keyframes shiver {
+	25% { @include prefix_translate_y(4%);}
+	50% { @include prefix_translate_y(-4%);}
+	75% { @include prefix_translate_y(2%);}
+	100% { @include prefix_translate_y(-2%);}
+}
+
+@keyframes shiver {
+	25% { @include prefix_translate_y(4%);}
+	50% { @include prefix_translate_y(-4%);}
+	75% { @include prefix_translate_y(2%);}
+	100% { @include prefix_translate_y(-2%);}
+}
+
+
+@mixin shoutout_button($bg_color : $main_color, $font_color : #fff) {
+	background: lighten($bg_color, 10%);
+	color: $font_color;
+	font-size: 18px;
+	font-family: 'Share', arial; 
+	display: inline-block;
+	width:150px;
+	padding:10px 0 10px 0;
+	border:1px solid darken($bg_color, 5%);
+	text-align: center;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 8px 8px -5px darken($bg_color, 10%);
+	   -moz-box-shadow: 0 8px 8px -5px darken($bg_color, 10%);
+	        box-shadow: 0 8px 8px -5px darken($bg_color, 10%);
+	-webkit-transition: all 0.1s;
+	   -moz-transition: all 0.1s;
+			transition: all 0.1s;
+	overflow: hidden;
+	&:hover {
+		text-decoration:none;
+		-webkit-animation: shiver 0.4s;
+		   -moz-animation: shiver 0.4s;
+		    	animation: shiver 0.4s;
+	}
+	&:active {
+		-webkit-transform: translateY(2%);
+		   -moz-transform: translateY(2%);
+		        transform: translateY(2%);
+	}
+}
+
+@mixin occupy_screen() {
+	height: 100%;
+	width: 100%;
+}
+
+html {
+	@include occupy_screen;
+	body {
+		@include occupy_screen;
+		 #wrap {
+		 	overflow: auto;
+			@include occupy_screen;
+			&:after {
+				content: '';
+				clear:both;
+				display: block;
+		}
+		}
+	}
+}
+
+.current {
+	color:#000;
+	pointer-events:none;
+	cursor: default;
+	text-decoration: none;
+}
+
+#sidebar {
+	background: desaturate(#eee, 50%);
+	float: left;
+	font-family: 'Share', arial; 
+	h3{
+		padding-left: 10px;
+		a {
+			font-family: 'Trade Winds', arial; 
+			color :$main_font_color;
+			text-decoration: none;
+		}
+	}
+	height: 100%;
+	position: fixed;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	width:270px;
+	#manga_list {
+		list-style: none;
+		margin:10px;
+		padding-bottom: 30px;
+	}
+	#main_footer {
+		font-size: 11px;
+		width: 255px;
+		background: #fff;
+		border-top: 1px solid #ccc;
+		position: fixed;
+		bottom: 0;
+		padding:5px 0 5px 0;
+		text-align: center;
+	}
+
+}
+
+#content {
+	margin-left: 300px;
+	font-family: 'Share', arial; 
+	.main_heading {
+		color :$main_font_color;
+		font-family: 'Trade Winds', arial; 
+		margin:50px;
+		font-size: 100px;
+		line-height: 100px;
+	}
+	#main_header {
+		#manga_details_wrap {
+			h3 {
+				padding: 0;
+				margin: 0;
+			}
+			.manga_details {
+				display: block;
+				overflow: auto;
+				img {
+					background: #eee;
+					border: 1px solid darken(#eee, 20%);
+					float:left;
+					padding:5px;
+					margin:10px 10px 10px 0;
+				}
+				.manga_desc {
+					text-indent: 30px;
+					margin-top:10px;
+				}
+				&:after {
+					content: '';
+					clear:both;
+					display: block;
+				}
+			}
+			.manga_chapters {
+				margin-left: 0;
+				-webkit-column-count:4;
+				   -moz-column-count:4;
+						column-count:4;
+				li:nth-child(odd) {
+					background: darken(#eee, 5%);
+				}
+				li:nth-child(even) {
+					background: #fff;
+				}
+			}
+		}
+		.shoutout {
+			margin-top: 80px;
+			text-align: center;
+			span {
+				font-weight: bold;
+			}
+			.facebook {
+				@include shoutout_button();
+			}
+			.twitter {
+				@include shoutout_button($green_color, $main_color);
+			}
+			.pinterest {
+				@include shoutout_button($red_color);
+			}
+		}
+	}
+}
+
+.fixed_top {
+	/*-webkit-transition: height 0.2s;
+	   -moz-transition: height 0.2s;
+			transition: height 0.2s;*/
+	background: #fff;
+	position: fixed;
+	height:39px;
+	width: 73%;
+	border-bottom: 1px solid #ccc;
+	&:after {
+		font-family: 'Trade Winds', arial; 
+		content:' - Libre Manga';
+	}
+	
+}
+
+@-webkit-keyframes rota {
+    25%  { -webkit-transform: rotate(90deg); }
+    50%  { -webkit-transform: rotate(180deg); }
+    75%  { -webkit-transform: rotate(270deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+@-moz-keyframes rota {
+    25%  { -moz-transform: rotate(90deg); }
+    50%  { -moz-transform: rotate(180deg); }
+    75%  { -moz-transform: rotate(270deg); }
+    100% { -moz-transform: rotate(360deg); }
+}
+
+.loader {
+	position: relative;
+	top:150px;
+	left:-50px;
+	.spinner {
+	    /* Size and position */
+	    font-size: 100px; /* 1em */
+	    width: 1em;
+	    height: 1em;
+	    position: relative;
+	    margin: 100px auto;
+	 
+	    /* Styles */
+	    border-radius: 50%;
+	    background: #FF4F72; /* Fallback */
+	    background:
+	        linear-gradient(#fff 50%, $main_color 50%), /* First column */
+	        linear-gradient($main_color 50%, #fff 50%); /* Second column */
+	    background-position: 
+	        0 0,    /* Position of 1st column */
+	        100% 0; /* Position of 2nd column */
+	    background-size: 50% 100%; /* Contraction of "50% 100%, 50% 100%" */
+	    background-repeat: no-repeat;
+	    box-shadow: 
+	        inset 0 0 0 .12em rgba(0,0,0,0.2), /* Inner border */
+	        0 0 0 .12em rgba(255,255,255,0.1); /* Outter border */
+	    opacity: 0.3;
+	    -webkit-animation: rota 3s infinite alternate;
+	    -moz-animation: rota 3s infinite alternate;
+	}
+	span {
+		position: absolute;
+		top:39%;
+		left:48%;
+	}
+}

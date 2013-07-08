@@ -128,7 +128,7 @@
 							real_month = (month < 10) ? '0' + month : month;
 							real_day = (day < 10) ? '0' + day : day;
 					%>
-					<li><a href="#" data-id="<%= item[3] %>" class="manga_chapter">Chapter <%= item[0] %></a> - <%= real_month %>/<%= real_day %>/<%= year %> 
+					<li><a href="#manga_chapter" role="button" data-toggle="modal" data-id="<%= item[3] %>" class="manga_chapter" data-toggle="modal">Chapter <%= item[0] %></a> - <%= real_month %>/<%= real_day %>/<%= year %> 
 						<% if(item[2] == null || item[2] == '' || $.isNumeric(item[2])) { %> 
 							<b>(No Title)</b>
 						<% } else { %>
@@ -138,6 +138,26 @@
 				<% }); %>
 			</ul>
 		</section>
+	</script>
+	<script type="text/template" id="manga_chapter_view">
+		<div id="manga_chapter<%= id %>" class="modal hide fade big_modal" tabindex="-1" role="dialog" aria-labelledby="manga_chapter_image<%= id %>" aria-hidden="true">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+				<h3 id="manga_chapter_image<%= id %>_label">Test Header <%= id %></h3>
+			</div>
+			<div class="modal-body">
+				<ul class="manga_chapter_image_holder">
+					<% _.each(images, function(item) { %>
+						<li>
+							<img src="http://cdn.mangaeden.com/mangasimg/<%= item[1]%>">
+						</li>
+					<% }); %>
+				</ul>
+			</div>
+			<div class="modal-footer">
+				<p>Testing Footer</p>
+			</div>
+		</div>
 	</script>
 	<script src="assets/js/index.js"></script>
 </body>

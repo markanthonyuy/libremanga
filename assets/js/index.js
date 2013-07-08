@@ -57,50 +57,27 @@
 	});*/
 
 	// Constant Variables
-	var MANGA_API_URL = 'http://www.mangaeden.com/api/manga/',
-		MANGA_CHAPTER_API_URL = 'http://www.mangaeden.com/api/chapter/';
+	var MANGA_API_URL 			= 'http://www.mangaeden.com/api/manga/',
+		MANGA_CHAPTER_API_URL 	= 'http://www.mangaeden.com/api/chapter/',
+		MANGA_CHAPTER_IMAGE_URL = 'http://cdn.mangaeden.com/mangasimg/';
 
 	// PREFIX jQuery variables with $ (dollar sign)
 	var $headerContent = $('#main_header'),
+		$content = $('#wrap'),	// For scroll fixed
 		$loader = $('.loader'),
-		$mangaList = $('#manga_list'),
-		mangaCache = {}; // Cache manga
+		$mangaList = $('#manga_list');
 
-
-	// Append manga info to the DOM
-	var showMangaInfo = function(data) {
-		$headerContent.append(_.template($('#manga_details').html(), data));
-	};
-
-	// TODO: Add image gallery
-	
-	var viewChapterClickEvent = function(classname) {
-		$('a.' + classname).on('click', function(e) {
-			e.preventDefault();
-
-			var _this = $(this),
-				chapterID = _this.data('id');
-
-			$.ajax({
-				url :  'proxy.php?url=' + encodeURIComponent(MANGA_CHAPTER_API_URL) + chapterID,
-				type : 'GET',
-				dataType : 'json',
-				success : function(res) {
-					console.log(res);
-				}
-			});
-		});
-	};
+	var	mangaCache = {},				// Cache manga
+		mangaChapterCache = {};			// Cache manga chapter
 
 	// Inspired from codrops
 	var didScroll = false,
-		changeHeaderOn = 5,
-		$content = $('#wrap');
+		changeHeaderOn = 5;
 
 	var scrollPage = function() {
 		var sy = scrollY(),
 			$fixedHeader = $('#manga_details_wrap header');
-		console.log(sy);
+		//console.log(sy);
 		if (sy >= changeHeaderOn ) {
 			$fixedHeader.addClass('fixed_top');
 		}
@@ -114,8 +91,57 @@
 		return $content.scrollTop();
 	};
 
+	// Append manga info to the DOM
+	var showMangaInfo = function(data) {
+		$headerContent.append(_.template($('#manga_details').html(), data));
+	};
+
+	// Append manga chapter image to the image gallery
+	var showMangaChapterImage = function(data) {
+		$headerContent.append(_.template($('#manga_chapter_view').html(), data));
+	};
+
+	var processMangaChapter = function(data, modal) {
+		console.log(data);
+		showMangaChapterImage(data);
+		$(modal).modal('show');
+	};
+
+	// TODO: Add image gallery
+	// TODO: loading message on click chapters
+
+	var viewChapterClickEvent = function(classname) {
+		$('a.' + classname).on('click', function(e) {
+			e.preventDefault();
+
+			var _this = $(this),
+				chapterID = _this.data('id'),
+				modalID = '#manga_chapter' + chapterID;
+
+			if(chapterID in mangaChapterCache) {
+				processMangaChapter(mangaChapterCache[chapterID], modalID);
+			} else {
+				$.ajax({
+					url :  'proxy.php?url=' + encodeURIComponent(MANGA_CHAPTER_API_URL) + chapterID,
+					type : 'GET',
+					dataType : 'json',
+					success : function(res) {
+						res['id'] = chapterID;
+						mangaChapterCache[chapterID] = res; // save manga chapter to cache
+					}
+				}).done(function(data, status) {
+					if(status == 'success') {
+						processMangaChapter(data, modalID);
+					} else {
+						console.log(data, status);
+					}
+				});
+			}
+		});
+	};
+
 	var processManga = function(manga, button) {
-		$loader.hide(); 						// Hides loader
+		$loader.hide();							// Hides loader
 		$mangaList.removeClass('disable_dom');  // Disable the click/pointer event in mangaList
 		button.removeClass('loading');			// Remove loading class
 		showMangaInfo(manga);					// Show manga
@@ -125,7 +151,7 @@
 
 		// Bind scrolling event		
 		$content.bind('scroll', function() {
-			console.log('scrolling');
+			//console.log('scrolling');
 			if(!didScroll) {
 				didScroll = true;
 				scrollPage();
@@ -139,7 +165,7 @@
 		// TODO: Add latest release date on sidebar 
 		// TODO: Store api on json text file
 		// TODO: Integrage Backbone MVC
-		
+
 		// Add function to click event
 		$('a.manga').on('click', function(e) {
 			e.preventDefault();
@@ -157,7 +183,7 @@
 					list.removeClass('current');
 				}
 			});	
-			
+
 			_this.addClass('current'); // Add class 'current' to self
 			_this.addClass('loading'); // Add class 'loading' to self
 
@@ -179,6 +205,8 @@
 					if(status == 'success') {
 						processManga(data, _this);
 						viewChapterClickEvent('manga_chapter');
+					} else {
+						console.log(data, status);
 					}
 				});
 			}

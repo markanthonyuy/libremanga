@@ -55,6 +55,9 @@
 	/*$('table').dataTable({
 		sDom : ''
 	});*/
+
+	// Constant Variables
+
 	var MANGA_API_URL = 'http://www.mangaeden.com/api/manga/',
 		MANGA_CHAPTER_API_URL = 'http://www.mangaeden.com/api/chapter/';
 
@@ -93,7 +96,7 @@
 
 	var scrollPage = function() {
 		var sy = scrollY(),
-			$fixedHeader = $('#manga_details_wrap h3');
+			$fixedHeader = $('#manga_details_wrap header');
 		console.log(sy);
 		if (sy >= changeHeaderOn ) {
 			$fixedHeader.addClass('fixed_top');

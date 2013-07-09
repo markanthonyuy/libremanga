@@ -52,23 +52,39 @@
 		});
 	});*/
 
-	/*$('table').dataTable({
-		sDom : ''
-	});*/
-
 	// Constant Variables
 	var MANGA_API_URL 			= 'http://www.mangaeden.com/api/manga/',
 		MANGA_CHAPTER_API_URL 	= 'http://www.mangaeden.com/api/chapter/',
 		MANGA_CHAPTER_IMAGE_URL = 'http://cdn.mangaeden.com/mangasimg/';
 
 	// PREFIX jQuery variables with $ (dollar sign)
-	var $headerContent = $('#main_header'),
-		$content = $('#wrap'),	// For scroll fixed
-		$loader = $('.loader'),
-		$mangaList = $('#manga_list');
+	var $headerContent	= $('#main_header'),
+		$content		= $('#wrap'),		// For scroll fixed
+		$loader			= $('.loader'),
+		$mangaList		= $('#manga_list');
 
 	var	mangaCache = {},				// Cache manga
 		mangaChapterCache = {};			// Cache manga chapter
+
+	var shareURL = function() {
+		$('.share_fb').on('click', function() {
+			window.open(
+				'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
+				'facebook-share-dialog', 
+				'width=626,height=436'
+			); 
+			return false;
+		});
+
+		$('.share_twitter').on('click', function() {
+			window.open(
+				'https://twitter.com/share?url=http%3A%2F%2Flibremanga.com', 
+				'twitter-tweet-dialog', 
+				'width=626,height=436'
+			); 
+			return false;
+		});
+	};
 
 	// Inspired from codrops
 	var didScroll = false,
@@ -101,10 +117,13 @@
 		$headerContent.append(_.template($('#manga_chapter_view').html(), data));
 	};
 
-	var processMangaChapter = function(data, modal) {
-		console.log(data);
-		showMangaChapterImage(data);
-		$(modal).modal('show');
+	var processMangaChapter = function(data, modal, button, parent) {
+		button.removeClass('loading');			// Removes fallback loading state to the link
+		parent.removeClass('disable_dom');		// Enable all manga chapter list links
+		$mangaList.removeClass('disable_dom');	// Enable sidebar manga list links
+		showMangaChapterImage(data);			// Call showMangaChapterImage function 
+		$(modal).modal('show');					// Show modal with manga chapter images
+		$('#custom_backdrop').remove();			// Removes custom bootstrap backdrop
 	};
 
 	// TODO: Add image gallery
@@ -114,24 +133,35 @@
 		$('a.' + classname).on('click', function(e) {
 			e.preventDefault();
 
-			var _this = $(this),
-				chapterID = _this.data('id'),
-				modalID = '#manga_chapter' + chapterID;
+			var _this				= $(this),
+				chapterNum			= _this.data('chapter'),
+				chapterID			= _this.data('id'),
+				mangaTitle			= _this.data('manga-title'),
+				modalID				= '#manga_chapter' + chapterID,
+				$mangaChapterList	= $('#manga_chapters_list'),
+				custom_backdrop		= '<div id="custom_backdrop" class="modal-backdrop"><div class="loader"><div class="spinner"></div><span class="dark">loading...</span></div></div>';
+
+			_this.addClass('loading');					// Add fallback loading state to the link
+			$mangaChapterList.addClass('disable_dom');	// Disable all manga chapter list links to prevent api call stack up
+			$mangaList.addClass('disable_dom');			// Disable sidebar manga list links to prevent api call stack up
+			$(custom_backdrop).appendTo(document.body); // Implements custom bootstrap backdrop
 
 			if(chapterID in mangaChapterCache) {
-				processMangaChapter(mangaChapterCache[chapterID], modalID);
+				processMangaChapter(mangaChapterCache[chapterID], modalID, _this, $mangaChapterList);
 			} else {
 				$.ajax({
 					url :  'proxy.php?url=' + encodeURIComponent(MANGA_CHAPTER_API_URL) + chapterID,
 					type : 'GET',
 					dataType : 'json',
 					success : function(res) {
-						res['id'] = chapterID;
+						res['id'] 			= chapterID;	// Hooks chapter ID to the response
+						res['num'] 			= chapterNum;	// Hooks chapter number to the response
+						res['manga_title'] 	= mangaTitle;	// Hooks manga title to the response
 						mangaChapterCache[chapterID] = res; // save manga chapter to cache
 					}
 				}).done(function(data, status) {
 					if(status == 'success') {
-						processMangaChapter(data, modalID);
+						processMangaChapter(data, modalID, _this, $mangaChapterList);
 					} else {
 						console.log(data, status);
 					}
@@ -145,6 +175,7 @@
 		$mangaList.removeClass('disable_dom');  // Disable the click/pointer event in mangaList
 		button.removeClass('loading');			// Remove loading class
 		showMangaInfo(manga);					// Show manga
+		shareURL();
 	};
 
 	var init = function() {
@@ -162,8 +193,7 @@
 
 		// DONE: Disabled sidebar or manga list link on ajax loading to prevent dom content stack up.
 		// TODO: Image caching in localstorage or sessionstorage
-		// TODO: Add latest release date on sidebar 
-		// TODO: Store api on json text file
+		// TODO: Store API response to json text file
 		// TODO: Integrage Backbone MVC
 
 		// Add function to click event
@@ -211,6 +241,8 @@
 				});
 			}
 		});
+
+		shareURL();
 	};
 
 	init();

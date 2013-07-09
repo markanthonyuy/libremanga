@@ -84,6 +84,15 @@
 			); 
 			return false;
 		});
+
+		$('.share_gplus').on('click', function() {
+			window.open(
+				'https://plus.google.com/share?url=http%3A%2F%2Flibremanga.com', 
+				'google-share-dialog', 
+				'width=626,height=436'
+			); 
+			return false;
+		});
 	};
 
 	// Inspired from codrops

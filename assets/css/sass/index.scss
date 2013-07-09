@@ -296,7 +296,7 @@ html {
 			.twitter {
 				@include shoutout_button($green_color, $main_color);
 			}
-			.pinterest {
+			.google {
 				@include shoutout_button(blue);
 			}
 		}

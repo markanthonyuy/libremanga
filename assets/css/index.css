@@ -5499,7 +5499,7 @@ html {
         -webkit-transform: translateY(2%);
         -moz-transform: translateY(2%);
         transform: translateY(2%); }
-    #content #main_header .shoutout .pinterest {
+    #content #main_header .shoutout .google {
       background: #3333ff;
       color: white;
       font-size: 18px;
@@ -5517,12 +5517,12 @@ html {
       -moz-transition: all 0.1s;
       transition: all 0.1s;
       overflow: hidden; }
-      #content #main_header .shoutout .pinterest:hover {
+      #content #main_header .shoutout .google:hover {
         text-decoration: none;
         -webkit-animation: shiver 0.4s;
         -moz-animation: shiver 0.4s;
         animation: shiver 0.4s; }
-      #content #main_header .shoutout .pinterest:active {
+      #content #main_header .shoutout .google:active {
         -webkit-transform: translateY(2%);
         -moz-transform: translateY(2%);
         transform: translateY(2%); }

@@ -107,10 +107,31 @@ html {
 	}
 }
 
+.modal-backdrop {
+	.loader {
+		text-align: center;
+		margin-top: 10%;
+	}
+}
+
 .manga_chapter_image_holder {
 	list-style: none;
 	text-align: center;
+	li {
+		background: url('../img/ajax-loader.gif') no-repeat center;
+		background-size: 128px 15px;
+		padding-bottom: 20px;
+		margin-bottom: 20px;
+		border-bottom: 5px solid $main_color;
+		&:last-child {
+			padding:none;
+			margin:none;
+			border:none;
+		}
+	}
 }
+
+
 
 #sidebar {
 	background: desaturate(#eee, 50%);
@@ -171,20 +192,15 @@ html {
 					list-style: none;
 					li {
 						float:left;
-						margin-right: 5px;
-						&:last-child {
-							margin-right:0;
-						}
 						a {
 							font-family: 'Share', arial; 
-							font-size: 20px;
-							line-height: 20px;
+							font-size: 18px;
 							position: relative;
-							-webkit-transition: all 0.5s;
-							   -moz-transition: all 0.5s;
-									transition: all 0.5s;
+							top:-5px;
+							-webkit-transition: all 1s;
+							   -moz-transition: all 1s;
+									transition: all 1s;
 							.expand {
-								background: #fff;
 								font-size: 20px;
 								line-height: 20px;
 								left:0;
@@ -198,9 +214,6 @@ html {
 								-webkit-transition: all 1s;
 								   -moz-transition: all 1s;
 										transition: all 1s;
-								&::after {
-									content:'-';
-								}
 							}
 							&:hover {
 								.expand {
@@ -241,17 +254,28 @@ html {
 					}
 					
 				}
+				.categories_items {
+					li {
+						float:left;
+						margin-right: 20px;
+					}
+					&::after {
+						content:'';
+						display: block;
+						clear: both;
+					}
+				}
 				&::after {
 					content: '';
 					clear:both;
 					display: block;
 				}
 			}
-			.manga_chapters {
+			#manga_chapters_list {
 				margin-left: 0;
-				-webkit-column-count:4;
-				   -moz-column-count:4;
-						column-count:4;
+				-webkit-column-count:3;
+				   -moz-column-count:3;
+						column-count:3;
 				li:nth-child(odd) {
 					background: darken(#eee, 5%);
 				}
@@ -273,8 +297,11 @@ html {
 				@include shoutout_button($green_color, $main_color);
 			}
 			.pinterest {
-				@include shoutout_button($red_color);
+				@include shoutout_button(blue);
 			}
+		}
+		.libre_manga_note {
+			margin-top: 100px;
 		}
 	}
 }
@@ -289,7 +316,7 @@ html {
 	width: 73%;
 	border-bottom: 1px solid #ccc;
 	h3 {
-			&::after {
+		&::after {
 			font-family: 'Trade Winds', arial; 
 			content:' - Libre Manga';
 		}
@@ -343,5 +370,11 @@ html {
 		position: absolute;
 		top:39%;
 		left:48%;
+	}
+	.dark {
+		position: absolute;
+		top:39%;
+		left:48%;
+		color:#fff;
 	}
 }

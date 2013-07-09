@@ -5309,9 +5309,23 @@ html {
   .big_modal .modal-body {
     max-height: 500px; }
 
+.modal-backdrop .loader {
+  text-align: center;
+  margin-top: 10%; }
+
 .manga_chapter_image_holder {
   list-style: none;
   text-align: center; }
+  .manga_chapter_image_holder li {
+    background: url("../img/ajax-loader.gif") no-repeat center;
+    background-size: 128px 15px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 5px solid steelblue; }
+    .manga_chapter_image_holder li:last-child {
+      padding: none;
+      margin: none;
+      border: none; }
 
 #sidebar {
   background: #eeeeee;
@@ -5360,20 +5374,16 @@ html {
     padding: 8px;
     list-style: none; }
     #content #main_header #manga_details_wrap header ul li {
-      float: left;
-      margin-right: 5px; }
-      #content #main_header #manga_details_wrap header ul li:last-child {
-        margin-right: 0; }
+      float: left; }
       #content #main_header #manga_details_wrap header ul li a {
         font-family: "Share", arial;
-        font-size: 20px;
-        line-height: 20px;
+        font-size: 18px;
         position: relative;
-        -webkit-transition: all 0.5s;
-        -moz-transition: all 0.5s;
-        transition: all 0.5s; }
+        top: -5px;
+        -webkit-transition: all 1s;
+        -moz-transition: all 1s;
+        transition: all 1s; }
         #content #main_header #manga_details_wrap header ul li a .expand {
-          background: #fff;
           font-size: 20px;
           line-height: 20px;
           left: 0;
@@ -5387,8 +5397,6 @@ html {
           -webkit-transition: all 1s;
           -moz-transition: all 1s;
           transition: all 1s; }
-          #content #main_header #manga_details_wrap header ul li a .expand::after {
-            content: '-'; }
         #content #main_header #manga_details_wrap header ul li a:hover .expand {
           left: -80px;
           width: 80px; }
@@ -5412,18 +5420,25 @@ html {
       margin-top: 20px; }
       #content #main_header #manga_details_wrap .manga_details .manga_desc:first-letter {
         font-size: 36px; }
+    #content #main_header #manga_details_wrap .manga_details .categories_items li {
+      float: left;
+      margin-right: 20px; }
+    #content #main_header #manga_details_wrap .manga_details .categories_items::after {
+      content: '';
+      display: block;
+      clear: both; }
     #content #main_header #manga_details_wrap .manga_details::after {
       content: '';
       clear: both;
       display: block; }
-  #content #main_header #manga_details_wrap .manga_chapters {
+  #content #main_header #manga_details_wrap #manga_chapters_list {
     margin-left: 0;
-    -webkit-column-count: 4;
-    -moz-column-count: 4;
-    column-count: 4; }
-    #content #main_header #manga_details_wrap .manga_chapters li:nth-child(odd) {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3; }
+    #content #main_header #manga_details_wrap #manga_chapters_list li:nth-child(odd) {
       background: #e1e1e1; }
-    #content #main_header #manga_details_wrap .manga_chapters li:nth-child(even) {
+    #content #main_header #manga_details_wrap #manga_chapters_list li:nth-child(even) {
       background: #fff; }
   #content #main_header .shoutout {
     margin-top: 80px;
@@ -5485,19 +5500,19 @@ html {
         -moz-transform: translateY(2%);
         transform: translateY(2%); }
     #content #main_header .shoutout .pinterest {
-      background: #dd2d33;
+      background: #3333ff;
       color: white;
       font-size: 18px;
       font-family: "Share", arial;
       display: inline-block;
       width: 150px;
       padding: 10px 0 10px 0;
-      border: 1px solid #a31a1f;
+      border: 1px solid #0000e6;
       text-align: center;
       border-radius: 5px;
-      -webkit-box-shadow: 0 8px 8px -5px #8d171b;
-      -moz-box-shadow: 0 8px 8px -5px #8d171b;
-      box-shadow: 0 8px 8px -5px #8d171b;
+      -webkit-box-shadow: 0 8px 8px -5px #0000cc;
+      -moz-box-shadow: 0 8px 8px -5px #0000cc;
+      box-shadow: 0 8px 8px -5px #0000cc;
       -webkit-transition: all 0.1s;
       -moz-transition: all 0.1s;
       transition: all 0.1s;
@@ -5511,6 +5526,8 @@ html {
         -webkit-transform: translateY(2%);
         -moz-transform: translateY(2%);
         transform: translateY(2%); }
+  #content #main_header .libre_manga_note {
+    margin-top: 100px; }
 
 .fixed_top {
   /*-webkit-transition: height 0.2s;
@@ -5583,3 +5600,8 @@ html {
     position: absolute;
     top: 39%;
     left: 48%; }
+  .loader .dark {
+    position: absolute;
+    top: 39%;
+    left: 48%;
+    color: #fff; }

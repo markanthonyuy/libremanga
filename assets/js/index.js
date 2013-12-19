@@ -234,8 +234,9 @@
 
 				// Call API
 				$.ajax({
-					url 	: 'proxy.php?url=' + encodeURIComponent(MANGA_API_URL) + mangaID,
-					type 	: 'GET',
+					//url 	: 'proxy.php?url=' + encodeURIComponent(MANGA_API_URL) + mangaID,
+					url 	: window.location.origin + '/assets/json/' + mangaID + '/manga.json',
+					//type 	: 'GET',
 					dataType: 'json',
 					success : function(res) {
 						mangaCache[mangaID] = res; // save manga to cache object

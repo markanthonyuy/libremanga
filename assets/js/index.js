@@ -232,10 +232,12 @@
 				viewChapterClickEvent('manga_chapter');		// Add click event to chapters
 			} else {
 
+				var apiUrl = window.location.protocol + '//' + window.location.hostname + window.location.pathname + 'assets/json/' + mangaID + '/manga.json';
+
 				// Call API
 				$.ajax({
 					//url 	: 'proxy.php?url=' + encodeURIComponent(MANGA_API_URL) + mangaID,
-					url 	: window.location.hostname + window.location.pathname + 'assets/json/' + mangaID + '/manga.json',
+					url 	: apiUrl,
 					//type 	: 'GET',
 					dataType: 'json',
 					success : function(res) {

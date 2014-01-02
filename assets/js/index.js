@@ -235,7 +235,7 @@
 				// Call API
 				$.ajax({
 					//url 	: 'proxy.php?url=' + encodeURIComponent(MANGA_API_URL) + mangaID,
-					url 	: window.location.origin + '/assets/json/' + mangaID + '/manga.json',
+					url 	: window.location.origin + '/' + window.location.pathname + '/' + '/assets/json/' + mangaID + '/manga.json',
 					//type 	: 'GET',
 					dataType: 'json',
 					success : function(res) {

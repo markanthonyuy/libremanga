@@ -5198,11 +5198,14 @@ input[type="submit"].btn.btn-mini {
 
 .modal {
   position: fixed;
-  top: 10%;
+  //top: 10%;
+  top: 10px;
   left: 50%;
   z-index: 1050;
-  width: 560px;
-  margin-left: -280px;
+  //width: 560px;
+  width: 940px;
+  margin-left: -470px;
+  //margin-left: -280px;
   background-color: #ffffff;
   border: 1px solid #999;
   border: 1px solid rgba(0, 0, 0, 0.3);
@@ -5247,7 +5250,8 @@ input[type="submit"].btn.btn-mini {
 
 .modal-body {
   position: relative;
-  max-height: 400px;
+  //max-height: 400px;
+  height: 400px;
   padding: 15px;
   overflow-y: auto;
 }

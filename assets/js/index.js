@@ -232,6 +232,7 @@
 				viewChapterClickEvent('manga_chapter');		// Add click event to chapters
 			} else {
 
+				// Use this if php proxy is not supported
 				var apiUrl = window.location.href + 'assets/json/' + mangaID + '/manga.json';
 
 				// Call API
@@ -251,6 +252,30 @@
 						console.log(data, status);
 					}
 				});
+			}
+		});
+
+		$(document).on('click', '.modal_fullscreen', function(e) {
+			e.preventDefault();
+			var _this = $(this),
+				parent = _this.closest('.modal');
+
+			if(parent.hasClass('fullscreen')) {
+				parent.removeClass('fullscreen')
+					.find('.modal-body').css({
+						height : '400px',
+						'paddingTop' : '15px'
+					});
+				_this.children().attr('class', ' icon-resize-full');
+				_this.attr('title', 'Fullscreen');
+			} else {
+				parent.addClass('fullscreen')
+					.find('.modal-body').css({
+						height : '80%',
+						'paddingTop' : 0
+					});
+				_this.children().attr('class', ' icon-resize-small');
+				_this.attr('title', 'Normal screen');
 			}
 		});
 

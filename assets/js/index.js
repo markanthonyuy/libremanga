@@ -272,7 +272,10 @@
 						'line-height': '30px',
 						'font-size' : '24.5px'
 					});
-				parent.find('.modal-header button').css('font-size', '14px');
+				parent.find('.modal-header button').css({
+					'font-size': '20px',
+					'marginTop': '2px'
+				});
 				parent.find('.modal-footer').css('display', 'block');
 				_this.children().attr('class', ' icon-resize-full').css('vertical-align', '2px');
 				_this.attr('title', 'Fullscreen');
@@ -288,7 +291,10 @@
 						'line-height': '14px',
 						'font-size' : '14px'
 					});
-				parent.find('.modal-header button').css('font-size', '14px');
+				parent.find('.modal-header button').css({
+					'font-size': '14px',
+					'marginTop': '-1px'
+				});
 				parent.find('.modal-footer').css('display', 'none');
 				_this.children().attr('class', ' icon-resize-small').css('vertical-align', '-1px');
 				_this.attr('title', 'Normal screen');

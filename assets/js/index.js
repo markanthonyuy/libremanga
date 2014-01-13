@@ -261,20 +261,36 @@
 				parent = _this.closest('.modal');
 
 			if(parent.hasClass('fullscreen')) {
+				// Normal Screen
 				parent.removeClass('fullscreen')
 					.find('.modal-body').css({
 						height : '400px',
 						'paddingTop' : '15px'
 					});
-				_this.children().attr('class', ' icon-resize-full');
+				parent.find('.modal-header').css('padding', '9px 15px')
+					.find('h3').css({
+						'line-height': '30px',
+						'font-size' : '24.5px'
+					});
+				parent.find('.modal-header button').css('font-size', '14px');
+				parent.find('.modal-footer').css('display', 'block');
+				_this.children().attr('class', ' icon-resize-full').css('vertical-align', '2px');
 				_this.attr('title', 'Fullscreen');
 			} else {
+				// Fullscreen
 				parent.addClass('fullscreen')
 					.find('.modal-body').css({
-						height : '80%',
+						height : '89%',
 						'paddingTop' : 0
 					});
-				_this.children().attr('class', ' icon-resize-small');
+				parent.find('.modal-header').css('padding', '5px')
+					.find('h3').css({
+						'line-height': '14px',
+						'font-size' : '14px'
+					});
+				parent.find('.modal-header button').css('font-size', '14px');
+				parent.find('.modal-footer').css('display', 'none');
+				_this.children().attr('class', ' icon-resize-small').css('vertical-align', '-1px');
 				_this.attr('title', 'Normal screen');
 			}
 		});

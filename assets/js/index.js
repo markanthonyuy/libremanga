@@ -89,7 +89,7 @@
 
 		$('.share_twitter').on('click', function() {
 			window.open(
-				'https://twitter.com/share?url=http%3A%2F%2Flibremanga.com', 
+				'https://twitter.com/share?url='+encodeURIComponent(location.href), 
 				'twitter-tweet-dialog', 
 				'width=626,height=436'
 			); 
@@ -98,7 +98,7 @@
 
 		$('.share_gplus').on('click', function() {
 			window.open(
-				'https://plus.google.com/share?url=http%3A%2F%2Flibremanga.com', 
+				'https://plus.google.com/share?url='+encodeURIComponent(location.href), 
 				'google-share-dialog', 
 				'width=626,height=436'
 			); 

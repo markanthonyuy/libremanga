@@ -1,3 +1,14 @@
+/**
+* Libre Manga
+* 
+* @package      Libremanga
+* @category     Javascript
+* @author       Mark Anthony Uy | macmac.uy@gmail.com
+* @copyright    Copyright (c) Mark Anthony Uy 2014, 
+* @version      Version 1.0
+* 
+*/
+
 (function() {
 	'use strict'; // jslint
 

@@ -187,6 +187,13 @@
 		shareURL();
 	};
 
+	var checkRemoveAndAddClass = function($el, checkRemClass, addClass) {
+		if($el.hasClass(checkRemClass)) {	// Check if the element has a class
+			$el.removeClass(checkRemClass)	// Remove the class
+			$el.addClass(addClass)			// Add new class
+		}
+	};
+
 	var init = function() {
 
 		// Bind scrolling event		
@@ -263,40 +270,24 @@
 			if(parent.hasClass('fullscreen')) {
 				// Normal Screen
 				parent.removeClass('fullscreen')
-					.find('.modal-body').css({
-						height : '400px',
-						'paddingTop' : '15px'
-					});
-				parent.find('.modal-header').css('padding', '9px 15px')
-					.find('h3').css({
-						'line-height': '30px',
-						'font-size' : '24.5px'
-					});
-				parent.find('.modal-header button').css({
-					'font-size': '20px',
-					'marginTop': '2px'
-				});
-				parent.find('.modal-footer').css('display', 'block');
-				_this.children().attr('class', ' icon-resize-full').css('vertical-align', '2px');
+					.find('.modal-body')
+						.removeClass('mb_fullscreen');
+				parent.find('.modal-header')
+					.removeClass('mh_fullscreen');
+				parent.find('.modal-footer')
+					.removeClass('mf_fullscreen');
+				checkRemoveAndAddClass(_this.children(), 'icon-resize-small', 'icon-resize-full');
 				_this.attr('title', 'Fullscreen');
 			} else {
 				// Fullscreen
 				parent.addClass('fullscreen')
-					.find('.modal-body').css({
-						height : '89%',
-						'paddingTop' : 0
-					});
-				parent.find('.modal-header').css('padding', '5px')
-					.find('h3').css({
-						'line-height': '14px',
-						'font-size' : '14px'
-					});
-				parent.find('.modal-header button').css({
-					'font-size': '14px',
-					'marginTop': '-1px'
-				});
-				parent.find('.modal-footer').css('display', 'none');
-				_this.children().attr('class', ' icon-resize-small').css('vertical-align', '-1px');
+					.find('.modal-body')
+						.addClass('mb_fullscreen');
+				parent.find('.modal-header')
+					.addClass('mh_fullscreen');
+				parent.find('.modal-footer')
+					.addClass('mf_fullscreen');
+				checkRemoveAndAddClass(_this.children(), 'icon-resize-full', 'icon-resize-small');
 				_this.attr('title', 'Normal screen');
 			}
 		});

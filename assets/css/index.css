@@ -5380,9 +5380,9 @@ html {
         font-size: 18px;
         position: relative;
         top: -5px;
-        -webkit-transition: all 1s;
-        -moz-transition: all 1s;
-        transition: all 1s; }
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        transition: all 0.5s; }
         #content #main_header #manga_details_wrap header ul li a .expand {
           font-size: 20px;
           line-height: 20px;
@@ -5394,14 +5394,16 @@ html {
           height: auto;
           text-align: right;
           white-space: nowrap;
-          -webkit-transition: all 1s;
-          -moz-transition: all 1s;
-          transition: all 1s; }
+          display: none;
+          -webkit-transition: all 0.5s;
+          -moz-transition: all 0.5s;
+          transition: all 0.5s; }
         #content #main_header #manga_details_wrap header ul li a:hover .expand {
-          left: -80px;
-          width: 80px; }
+          left: -70px;
+          width: 70px;
+          display: inline-block; }
         #content #main_header #manga_details_wrap header ul li a:nth-child(n+1):hover {
-          margin-left: 80px; }
+          margin-left: 70px; }
   #content #main_header #manga_details_wrap header::after {
     content: '';
     display: block;
@@ -5539,8 +5541,7 @@ html {
   width: 73%;
   border-bottom: 1px solid #cccccc; }
   .fixed_top h3::after {
-    font-family: "Trade Winds", arial;
-    content: ' - Libre Manga'; }
+    font-family: "Trade Winds", arial; }
 
 @-webkit-keyframes rota {
   25% {
@@ -5606,6 +5607,7 @@ html {
     left: 48%;
     color: #fff; }
 
+/* FULL SCREEN */
 .modal_fullscreen i {
   vertical-align: 2px; }
 
@@ -5617,3 +5619,25 @@ html {
   top: 0 !important;
   left: 0;
   margin: 0; }
+
+.mb_fullscreen {
+  height: 89% !important;
+  padding-top: 0; }
+
+.mh_fullscreen {
+  padding: 5px; }
+  .mh_fullscreen h3 {
+    line-height: 14px;
+    font-size: 14px; }
+  .mh_fullscreen .close {
+    font-size: 14px;
+    margin-top: -2px; }
+
+.mf_fullscreen {
+  display: none !important; }
+
+.icon-resize-full {
+  vertical-align: 2px !important; }
+
+.icon-resize-small {
+  vertical-align: -1px !important; }

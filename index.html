@@ -217,9 +217,13 @@
 			</div>
 			<div class="modal-body">
 				<ul class="manga_chapter_image_holder">
-					<% _.each(images, function(item) { %>
+					<% _.each(images.reverse(), function(item) { %>
 						<li>
-							<img src="http://cdn.mangaeden.com/mangasimg/<%= item[1]%>">
+							<% if(item[0] == 0) { %>
+								<img src="http://cdn.mangaeden.com/mangasimg/<%= item[1]%>">
+							<% } else { %>
+								<img data-original="http://cdn.mangaeden.com/mangasimg/<%= item[1]%>" class="lazy">
+							<% } %>
 						</li>
 					<% }); %>
 				</ul>
@@ -235,19 +239,17 @@
 	<!-- <script src="assets/js/lib/backbone-1.0.0.js"></script> -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
 	<script src="assets/js/index.js"></script>
 	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-47208426-1']);
+		_gaq.push(['_trackPageview']);
 
-	  var _gaq = _gaq || [];
-	  _gaq.push(['_setAccount', 'UA-47208426-1']);
-	  _gaq.push(['_trackPageview']);
-
-	  (function() {
-	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  })();
-
+		(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
 	</script>
 	<!-- Develop and Maintain by Mark Anthony Uy. Email me at macmac.uy@gmail.com -->
 </body>

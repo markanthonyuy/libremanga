@@ -135,6 +135,11 @@
 	// Append manga chapter image to the image gallery
 	var showMangaChapterImage = function(data) {
 		$headerContent.append(_.template($('#manga_chapter_view').html(), data));
+
+		$('img.lazy').lazyload({
+			container : $('.modal-body'),
+			placeholder : '../assets/img/ajax-loader.gif'
+		});
 	};
 
 	var processMangaChapter = function(data, modal, button, parent) {

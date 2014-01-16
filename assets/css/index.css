@@ -5318,6 +5318,7 @@ html {
   text-align: center; }
   .manga_chapter_image_holder li {
     /*background: url('../img/ajax-loader.gif') no-repeat center;*/
+    position: relative;
     background-size: 128px 15px;
     padding-bottom: 20px;
     margin-bottom: 20px;
@@ -5326,6 +5327,13 @@ html {
       padding: none;
       margin: none;
       border: none; }
+    .manga_chapter_image_holder li .manga_count {
+      position: absolute;
+      font-family: "Trade Winds", arial;
+      font-size: 30px;
+      color: #0f0f0f;
+      top: 5px;
+      left: -30px; }
 
 #sidebar {
   background: #eeeeee;

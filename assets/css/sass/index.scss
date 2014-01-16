@@ -116,6 +116,7 @@ html {
 	text-align: center;
 	li {
 		/*background: url('../img/ajax-loader.gif') no-repeat center;*/
+		position: relative;
 		background-size: 128px 15px;
 		padding-bottom: 20px;
 		margin-bottom: 20px;
@@ -124,6 +125,15 @@ html {
 			padding:none;
 			margin:none;
 			border:none;
+		}
+
+		.manga_count {
+			position: absolute;
+			font-family: "Trade Winds", arial;
+			font-size: 30px;
+			color: $main_font_color;
+			top: 5px;
+			left: -30px;
 		}
 	}
 }

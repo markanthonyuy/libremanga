@@ -220,9 +220,9 @@
 					<% _.each(images.reverse(), function(item) { %>
 						<li>
 							<% if(item[0] == 0) { %>
-								<img src="http://cdn.mangaeden.com/mangasimg/<%= item[1]%>">
+								<span class="manga_count"><%= item[0] + 1 %></span><img src="http://cdn.mangaeden.com/mangasimg/<%= item[1]%>">
 							<% } else { %>
-								<img data-original="http://cdn.mangaeden.com/mangasimg/<%= item[1]%>" class="lazy">
+								<span class="manga_count"><%= item[0] + 1 %></span><img data-original="http://cdn.mangaeden.com/mangasimg/<%= item[1]%>" class="lazy">
 							<% } %>
 						</li>
 					<% }); %>

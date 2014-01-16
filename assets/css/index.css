@@ -5317,7 +5317,7 @@ html {
   list-style: none;
   text-align: center; }
   .manga_chapter_image_holder li {
-    background: url("../img/ajax-loader.gif") no-repeat center;
+    /*background: url('../img/ajax-loader.gif') no-repeat center;*/
     background-size: 128px 15px;
     padding-bottom: 20px;
     margin-bottom: 20px;

@@ -133,6 +133,7 @@
 			url  : 'assets/templates/all.html',
 		}).done(function(temp) {
 			$('body').append(temp);
+			console.log('Done loading templates!');
 		}).fail(function(data) {
 			console.log('Failed loading template. Please refresh the page');
 		});

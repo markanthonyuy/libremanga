@@ -4,6 +4,8 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		jsFolder: 'assets/js/',
 		cssFolder: 'assets/css/',
+		imgFolder: 'assets/img/',
+		compressImgFolder: 'assets/img/compressed/',
 
 		uglify: {
 			options: {
@@ -26,6 +28,20 @@ module.exports = function(grunt) {
 			}
 		},
 
+		imagemin: {
+			static: {
+				options: {
+					optimazationLevel: 4
+				},
+				files: {
+					'<%= compressImgFolder %>ajax-loader.gif'		: '<%= imgFolder %>ajax-loader.gif',
+					'<%= compressImgFolder %>facebook_active.png'	: '<%= imgFolder %>facebook_active.png',
+					'<%= compressImgFolder %>google_active.png'		: '<%= imgFolder %>google_active.png',
+					'<%= compressImgFolder %>twitter_active.png'	: '<%= imgFolder %>twitter_active.png'
+				}
+			}
+		},
+
 		watch: {
 			js: {
 				files: '<%= jsFolder %>index.js',
@@ -41,9 +57,11 @@ module.exports = function(grunt) {
 	// Load Plugins
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	// Define Task
 	grunt.registerTask('default', ['uglify', 'cssmin']);
+	grunt.registerTask('image', ['imagemin']);
 	grunt.registerTask('server', ['watch']);
 };

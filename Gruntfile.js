@@ -38,10 +38,12 @@ module.exports = function(grunt) {
 		}
 	});
 
+	// Load Plugins
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
+	// Define Task
 	grunt.registerTask('default', ['uglify', 'cssmin']);
 	grunt.registerTask('server', ['watch']);
 };

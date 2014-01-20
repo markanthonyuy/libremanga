@@ -127,6 +127,17 @@
 		return $content.scrollTop();
 	};
 
+	var appendTemplates = function() {
+		$.ajax({
+			type : 'GET',
+			url  : 'assets/templates/all.html',
+		}).done(function(temp) {
+			$('body').append(temp);
+		}).fail(function(data) {
+			console.log('Failed loading template. Please refresh the page');
+		});
+	};
+
 	// Append manga info to the DOM
 	var showMangaInfo = function(data) {
 		$headerContent.append(_.template($('#manga_details').html(), data));
@@ -134,6 +145,7 @@
 
 	// Append manga chapter image to the image gallery
 	var showMangaChapterImage = function(data) {
+
 		$headerContent.append(_.template($('#manga_chapter_view').html(), data));
 
 		$('img.lazy').lazyload({
@@ -222,6 +234,7 @@
 		});
 
 		$loader.hide(); // Hide loader on load page
+		appendTemplates();
 
 		// DONE: Disabled sidebar or manga list link on ajax loading to prevent dom content stack up.
 		// TODO: Image caching in localstorage or sessionstorage

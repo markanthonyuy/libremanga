@@ -5,6 +5,7 @@ module.exports = function(grunt) {
 		jsFolder: 'assets/js/',
 		cssFolder: 'assets/css/',
 		imgFolder: 'assets/img/',
+		jsonFolder: 'assets/json/',
 		compressImgFolder: 'assets/img/compressed/',
 
 		uglify: {
@@ -42,6 +43,14 @@ module.exports = function(grunt) {
 			}
 		},
 
+		minjson: {
+			compile: {
+				files: {
+					'<%= jsonFolder %>manga_list.min.json': '<%= jsonFolder %>manga_list.json'
+				}
+			}
+		},
+
 		watch: {
 			js: {
 				files: '<%= jsFolder %>index.js',
@@ -50,6 +59,10 @@ module.exports = function(grunt) {
 			css: {
 				files: '<%= cssFolder %>index.css',
 				tasks: ['cssmin']
+			},
+			json: {
+				files: '<%= jsonFolder %>manga_list.json',
+				tasks: ['minjson']
 			}
 		}
 	});
@@ -58,10 +71,11 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
+	grunt.loadNpmTasks('grunt-minjson');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	// Define Task
-	grunt.registerTask('default', ['uglify', 'cssmin']);
+	grunt.registerTask('default', ['uglify', 'cssmin', 'minjson']);
 	grunt.registerTask('image', ['imagemin']);
 	grunt.registerTask('server', ['watch']);
 };

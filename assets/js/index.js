@@ -72,6 +72,8 @@
 	var $headerContent	= $('#main_header'),
 		$content		= $('#wrap'),		// For scroll fixed
 		$loader			= $('.loader'),
+		$sortName		= $('#sort_by_name'),
+		$sortHot		= $('#sort_by_hot'),
 		$mangaList		= $('#manga_list');
 
 	var	mangaCache = {},				// Cache manga
@@ -223,6 +225,41 @@
 		}
 	};
 
+	var loadList = function(sort) {
+		$.getJSON('assets/json/manga_list.json').done(function(data) {
+			console.log(data);
+
+			if(sort == 'name') {
+				$mangaList.append(_.template($('#manga_list_temp_sorted_name').html(), data));
+			} else {
+				$mangaList.append(_.template($('#manga_list_temp_sorted_hot').html(), data));
+			}
+
+		}).fail(function(error) {
+			console.log(error);
+		}).always(function() {
+		});
+	};
+
+	var sortInit = function() {
+		$sortName.on('click', function(e) {
+			e.preventDefault();
+
+			$sortHot.removeClass('current');
+			$(this).addClass('current');
+			$mangaList.empty();
+			loadList('name')
+		});
+		$sortHot.on('click', function(e) {
+			e.preventDefault();
+
+			$sortName.removeClass('current');
+			$(this).addClass('current');
+			$mangaList.empty();
+			loadList('hot')
+		});
+	};
+
 	var init = function() {
 
 		// Bind scrolling event		
@@ -236,6 +273,8 @@
 
 		$loader.hide(); // Hide loader on load page
 		appendTemplates();
+		loadList();
+		sortInit();
 
 		// DONE: Disabled sidebar or manga list link on ajax loading to prevent dom content stack up.
 		// TODO: Image caching in localstorage or sessionstorage
@@ -243,7 +282,7 @@
 		// TODO: Integrage Backbone MVC
 
 		// Add function to click event
-		$('a.manga').on('click', function(e) {
+		$(document).on('click', 'a.manga', function(e) {
 			e.preventDefault();
 
 			$headerContent.empty();

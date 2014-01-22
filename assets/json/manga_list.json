@@ -1,0 +1,170 @@
+{
+	"name": "Manga List",
+	"list": [
+		{
+			"name": "Naruto",
+			"id": "4e70ea03c092255ef70046f0",
+			"hot": 1
+		},
+		{
+			"name": "Bleach",
+			"id": "4e70e9efc092255ef7004274",
+			"hot": 1
+		},
+		{
+			"name": "One Piece",
+			"id": "4e70ea10c092255ef7004aa2",
+			"hot": 1
+		},
+		{
+			"name": "Detective Conan",
+			"id": "4e70ea0cc092255ef70049ac",
+			"hot": 1
+		},
+		{
+			"name": "Hunter x Hunter",
+			"id": "4e70ea02c092255ef70046e0",
+			"hot": 1
+		},
+		{
+			"name": "Hajime no Ippo",
+			"id": "4e70ea14c092255ef7004be8",
+			"hot": 1
+		},
+		{
+			"name": "Beelzebub",
+			"id": "4e70ea03c092255ef7004716",
+			"hot": 1
+		},
+		{
+			"name": "History's Strongest Disciple Kenichi",
+			"id": "4e70ea02c092255ef70046d6",
+			"hot": 1
+		},
+		{
+			"name": "Toriko",
+			"id": "4e70ea0cc092255ef7004966",
+			"hot": 1
+		},
+		{
+			"name": "Fairy Tail",
+			"id": "4e70ea1dc092255ef7004d5c",
+			"hot": 1
+		},
+		{
+			"name": "Kuroko no Basuke",
+			"id": "4e70ea22c092255ef7004f01",
+			"hot": 1
+		},
+		{
+			"name": "Get Backers",
+			"id": "4e70e9ecc092255ef700415c",
+			"hot": 0
+		},
+		{
+			"name": "GTO",
+			"id": "4e70e9fdc092255ef700454c",
+			"hot": 0
+		},
+		{
+			"name": "Dragon Ball SD",
+			"id": "4e70ea60c092255ef700672e",
+			"hot": 0
+		},
+		{
+			"name": "Slam Dunk",
+			"id": "4e70ea0fc092255ef7004a61",
+			"hot": 0
+		},
+		{
+			"name": "Pokemon Adventure",
+			"id": "4e70e9f8c092255ef7004410",
+			"hot": 0
+		},
+		{
+			"name": "Hell Teacher Nube",
+			"id": "4e70e91dc092255ef7001733",
+			"hot": 0
+		},
+		{
+			"name": "Flame Of Recca",
+			"id": "4e70e9f9c092255ef700442c",
+			"hot": 0
+		},
+		{
+			"name": "Katekyo Hitman Reborn",
+			"id": "4e70ea00c092255ef700461c",
+			"hot": 0
+		},
+		{
+			"name": "Death Note",
+			"id": "4e70ea0dc092255ef70049b6",
+			"hot": 0
+		},
+		{
+			"name": "Fullmetal Alchemist",
+			"id": "4e70ea06c092255ef700479d",
+			"hot": 0
+		},
+		{
+			"name": "D.Gray-man",
+			"id": "4e70ea05c092255ef700477b",
+			"hot": 0
+		},
+		{
+			"name": "Soul Eater",
+			"id": "4e70ea03c092255ef700470c",
+			"hot": 0
+		},
+		{
+			"name": "Berserk",
+			"id": "4e70ea0ec092255ef7004a28",
+			"hot": 0
+		},
+		{
+			"name": "Claymore",
+			"id": "4e70ea02c092255ef70046c5",
+			"hot": 0
+		},
+		{
+			"name": "Air Gear",
+			"id": "4e70ea0ac092255ef70048d8",
+			"hot": 0
+		},
+		{
+			"name": "Shaman King",
+			"id": "4e70e9e6c092255ef7003fa9",
+			"hot": 0
+		},
+		{
+			"name": "20th Century Boys",
+			"id": "4e70e9fdc092255ef700453c",
+			"hot": 0
+		},
+		{
+			"name": "Beck",
+			"id": "4e70ea08c092255ef700483f",
+			"hot": 0
+		},
+		{
+			"name": "Rurouni Kenshin",
+			"id": "4e70ea04c092255ef700473e",
+			"hot": 0
+		},
+		{
+			"name": "Yakitate Japan",
+			"id": "4e70ea13c092255ef7004bb2",
+			"hot": 0
+		},
+		{
+			"name": "New Grappler Baki",
+			"id": "4e70e9dec092255ef7003d75",
+			"hot": 0
+		},
+		{
+			"name": "Tenjou Tenge",
+			"id": "4e70ea03c092255ef70046f4",
+			"hot": 0
+		}
+	]
+}

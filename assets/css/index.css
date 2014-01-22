@@ -5350,6 +5350,18 @@ html {
       font-family: "Trade Winds", arial;
       color: #0f0f0f;
       text-decoration: none; }
+  #sidebar #sort_manga {
+    list-style: none;
+    margin-left: 10px;
+    margin-top: -10px; }
+    #sidebar #sort_manga li {
+      font-size: 12px;
+      float: left;
+      margin-right: 5px; }
+    #sidebar #sort_manga::after {
+      content: '';
+      display: block;
+      clear: both; }
   #sidebar #manga_list {
     list-style: none;
     margin: 10px;

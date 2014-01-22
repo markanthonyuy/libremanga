@@ -144,7 +144,7 @@ html {
 	background: desaturate(#eee, 50%);
 	float: left;
 	font-family: 'Share', arial; 
-	h3{
+	h3 {
 		padding-left: 10px;
 		a {
 			font-family: 'Trade Winds', arial; 
@@ -157,6 +157,23 @@ html {
 	overflow-y: scroll;
 	overflow-x: hidden;
 	width:270px;
+
+	#sort_manga {
+		list-style: none;
+		margin-left: 10px;
+		margin-top: -10px;
+		
+		li {
+			font-size: 12px;
+			float: left;
+			margin-right: 5px;
+		}
+		&::after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+	}
 	#manga_list {
 		list-style: none;
 		margin:10px;

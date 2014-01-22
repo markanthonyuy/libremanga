@@ -271,7 +271,7 @@
 
 		$loader.hide(); // Hide loader on load page
 		appendTemplates();
-		loadList();
+		/*loadList();*/
 		sortInit();
 
 		// DONE: Disabled sidebar or manga list link on ajax loading to prevent dom content stack up.

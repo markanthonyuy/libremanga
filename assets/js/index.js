@@ -227,8 +227,6 @@
 
 	var loadList = function(sort) {
 		$.getJSON('assets/json/manga_list.json').done(function(data) {
-			console.log(data);
-
 			if(sort == 'name') {
 				$mangaList.append(_.template($('#manga_list_temp_sorted_name').html(), data));
 			} else {

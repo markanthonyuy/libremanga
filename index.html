@@ -13,9 +13,14 @@
 	<div id="wrap">
 		<aside id="sidebar">
 		<!--Sidebar content-->
-			<h3><a href="javascript:(void)">Manga List</a></h3>
+			<h3><a href="#">Manga List</a></h3>
+			<ul id="sort_manga">
+				<li>Sort By:</li>
+				<li><a href="#" id="sort_by_name">Name</a> |</li>
+				<li><a href="#" id="sort_by_hot" class="current">Hot</a></li>
+			</ul>
 			<ul id="manga_list">
-				<li>
+				<!-- <li>
 					<a href="javascript:(void)" class="manga" data-id="4e70ea03c092255ef70046f0">Naruto</a>
 					<span class="label label-important">HOT</span>
 				</li>
@@ -58,9 +63,12 @@
 				<li><a href="javascript:(void)" class="manga" data-id="4e70e9f8c092255ef7004410">Pokemon Adventure</a></li>
 				<li><a href="javascript:(void)" class="manga" data-id="4e70e91dc092255ef7001733">Hell Teacher Nube</a></li>
 				<li><a href="javascript:(void)" class="manga" data-id="4e70e9f9c092255ef700442c">Flame Of Recca</a></li>
-				<li><!-- <a href="javascript:(void)" class="manga" data-id="4e70ea60c092255ef7006732"> -->Rock Lee's Springtime of Youth<!-- </a> --></li>
 				<li>
 					<a href="javascript:(void)" class="manga" data-id="4e70ea1dc092255ef7004d5c">Fairy Tail</a>
+					<span class="label label-important">HOT</span>
+				</li>
+				<li>
+					<a href="javascript:(void)" class="manga" data-id="4e70ea22c092255ef7004f01">Kuroko no Basuke</a>
 					<span class="label label-important">HOT</span>
 				</li>
 				<li><a href="javascript:(void)" class="manga" data-id="4e70ea00c092255ef700461c">Katekyo Hitman Reborn</a></li>
@@ -77,11 +85,7 @@
 				<li><a href="javascript:(void)" class="manga" data-id="4e70ea04c092255ef700473e">Rurouni Kenshin</a></li>
 				<li><a href="javascript:(void)" class="manga" data-id="4e70ea13c092255ef7004bb2">Yakitate Japan</a></li>
 				<li><a href="javascript:(void)" class="manga" data-id="4e70e9dec092255ef7003d75">New Grappler Baki</a></li>
-				<li>
-					<a href="javascript:(void)" class="manga" data-id="4e70ea22c092255ef7004f01">Kuroko no Basuke</a>
-					<span class="label label-important">HOT</span>
-				</li>
-				<li><a href="javascript:(void)" class="manga" data-id="4e70ea03c092255ef70046f4">Tenjou Tenge</a></li>
+				<li><a href="javascript:(void)" class="manga" data-id="4e70ea03c092255ef70046f4">Tenjou Tenge</a></li> -->
 			</ul>
 			<footer id="main_footer">
 				<span class="container">Copyright 2014 - Libre Manga | <a href="#disclaimer" role="button" data-toggle="modal">Disclaimer</a> | <a href="#about" role="button" data-toggle="modal">About</a> </span>
@@ -142,13 +146,15 @@
 			</div>
 		</section>
 	</div>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+	<script src="assets/js/lib/jquery-2.0.2.js"></script>
+	<script src="assets/js/lib/bootstrap-2.3.2.js"></script>
+	<script src="assets/js/lib/underscore-1.4.4.js"></script>
 	<script>window.jQuery || document.write('<script src="assets/js/lib/jquery-2.0.2.js"><\/script>')</script>
 	<!-- <script src="assets/js/lib/backbone-1.0.0.js"></script> -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+	<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script> -->
+	<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script> -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
-	<script src="assets/js/index.min.js"></script>
+	<script src="assets/js/index.js"></script>
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
 		_gaq.push(['_setAccount', 'UA-47208426-1']);

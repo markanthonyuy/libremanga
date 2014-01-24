@@ -19,15 +19,23 @@
 				</li>
 			</ul>
 		</header>
-		<h3 class="mobile"><%= title %></h3>
+		<h3 class="mobile" id="mobile_sharer">
+			<%= title %>
+			<a href="https://plus.google.com/share?url=http%3A%2F%2Flibremanga.ap01.aws.af.cm" target="_blank" class="share_gplus"><img src="assets/img/google_active.png" alt="Google Plus">
+					</a>
+			<a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flibremanga.ap01.aws.af.cm" target="_blank" class="share_fb">
+						<img src="assets/img/facebook_active.png" alt="Facebook">
+					</a>
+			<a href="https://twitter.com/share?url=http%3A%2F%2Flibremanga.ap01.aws.af.cm" target="_blank" class="share_twitter"><img src="assets/img/twitter_active.png" alt="Twitter">
+					</a>
+			
+		</h3>
 		<div class="manga_details">
 			<img src="http://cdn.mangaeden.com/mangasimg/<%= image %>" alt="<%= title %>">
 			<p class="manga_desc">
 				<%= description %>
 			</p>
-			<p>
-				<span><b>Created By</b> - <%= author %></span>
-			</p>
+			<h4><b>Created By</b> - <%= author %></h4>
 			<div class="manga_more_info">
 				<h4 class="categories">Categories</h4>
 				<ul class="categories_items">

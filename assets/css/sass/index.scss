@@ -28,7 +28,7 @@
 	75% { @include prefix_translate_y(2%);}
 	100% { @include prefix_translate_y(-2%);}
 }
-@media (min-width: 480px) {
+@media (min-width: 767px) {
 	#sidebar {
 		display: block !important;
 		visibility: visible !important;
@@ -64,7 +64,7 @@
 		   -moz-transform: translateY(2%);
 		        transform: translateY(2%);
 	}
-	@media (max-width: 480px) {
+	@media (max-width: 767px) {
 		width:100px;
 		font-size: 14px;
 		padding:5px 0 5px 0;

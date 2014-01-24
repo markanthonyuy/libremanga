@@ -1,4 +1,4 @@
-@media (max-width: 480px) {
+@media (max-width: 767px) {
 	.mobile { display: block !important}
 	#mobile_header {
 		padding-left: 10px;
@@ -115,7 +115,17 @@
 			display: none;
 		}
 
+		#mobile_sharer {
+			a {
+				&:hover {
+					text-decoration:none;
+				}
+			}
+		}
+
 		h3, h4 { padding-left: 10px;}
+
+		h4 { font-size: 20.5px}
 
 		.manga_details {
 			overflow: visible !important;
@@ -141,7 +151,8 @@
 					column-count:1 !important;
 
 			li {
-				font-size: 16px !important;
+				font-size: 18px !important;
+				padding: 3px 0 3px 0;
 			}
 		}
 	}

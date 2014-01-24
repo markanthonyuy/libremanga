@@ -5216,7 +5216,7 @@ a.badge:focus {
   font-family: 'Trade Winds';
   src: url("../fonts/Trade_Winds/TradeWinds-Regular.ttf?") format("truetype"); }
 
-@media (max-width: 480px) {
+@media (max-width: 767px) {
   .mobile {
     display: block !important; }
 
@@ -5307,8 +5307,12 @@ a.badge:focus {
 
   #manga_details_wrap header {
     display: none; }
+  #manga_details_wrap #mobile_sharer a:hover {
+    text-decoration: none; }
   #manga_details_wrap h3, #manga_details_wrap h4 {
     padding-left: 10px; }
+  #manga_details_wrap h4 {
+    font-size: 20.5px; }
   #manga_details_wrap .manga_details {
     overflow: visible !important;
     padding: 10px; }
@@ -5326,7 +5330,8 @@ a.badge:focus {
     -moz-column-count: 1 !important;
     column-count: 1 !important; }
     #manga_details_wrap #manga_chapters_list li {
-      font-size: 16px !important; }
+      font-size: 18px !important;
+      padding: 3px 0 3px 0; }
 
   .loader {
     left: 0 !important; }
@@ -5403,7 +5408,7 @@ a.badge:focus {
     -moz-transform: translateY(-2%);
     transform: translateY(-2%); } }
 
-@media (min-width: 480px) {
+@media (min-width: 767px) {
   #sidebar {
     display: block !important;
     visibility: visible !important; } }
@@ -5622,7 +5627,7 @@ html {
         -webkit-transform: translateY(2%);
         -moz-transform: translateY(2%);
         transform: translateY(2%); }
-      @media (max-width: 480px) {
+      @media (max-width: 767px) {
         #content #main_header .shoutout .facebook {
           width: 100px;
           font-size: 14px;
@@ -5654,7 +5659,7 @@ html {
         -webkit-transform: translateY(2%);
         -moz-transform: translateY(2%);
         transform: translateY(2%); }
-      @media (max-width: 480px) {
+      @media (max-width: 767px) {
         #content #main_header .shoutout .twitter {
           width: 100px;
           font-size: 14px;
@@ -5686,7 +5691,7 @@ html {
         -webkit-transform: translateY(2%);
         -moz-transform: translateY(2%);
         transform: translateY(2%); }
-      @media (max-width: 480px) {
+      @media (max-width: 767px) {
         #content #main_header .shoutout .google {
           width: 100px;
           font-size: 14px;

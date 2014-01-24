@@ -205,11 +205,16 @@ html {
 	margin-left: 300px;
 	font-family: 'Share', arial; 
 	.main_heading {
-		color :$main_font_color;
-		font-family: 'Trade Winds', arial; 
 		margin:50px;
-		font-size: 100px;
-		line-height: 100px;
+		a {
+			color :$main_font_color;
+			font-family: 'Trade Winds', arial; 
+			font-size: 100px;
+			line-height: 100px;
+			&:hover {
+				text-decoration:none;
+			}
+		}
 	}
 	#main_header {
 		#manga_details_wrap {

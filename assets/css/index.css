@@ -5513,11 +5513,14 @@ html {
   margin-left: 300px;
   font-family: "Share", arial; }
   #content .main_heading {
-    color: #0f0f0f;
-    font-family: "Trade Winds", arial;
-    margin: 50px;
-    font-size: 100px;
-    line-height: 100px; }
+    margin: 50px; }
+    #content .main_heading a {
+      color: #0f0f0f;
+      font-family: "Trade Winds", arial;
+      font-size: 100px;
+      line-height: 100px; }
+      #content .main_heading a:hover {
+        text-decoration: none; }
   #content #main_header #manga_details_wrap header h3 {
     float: left;
     padding: 0;

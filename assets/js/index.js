@@ -284,7 +284,7 @@
 			e.preventDefault();
 
 			$headerContent.empty();
-			if(window.innerWidth > 480) $loader.show();
+			if(window.innerWidth > 767) $loader.show();
 			$mangaList.addClass('disable_dom');
 
 			var _this = $(this),			// Cache self

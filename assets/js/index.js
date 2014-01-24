@@ -284,7 +284,7 @@
 			e.preventDefault();
 
 			$headerContent.empty();
-			$loader.show();
+			if(window.innerWidth > 480) $loader.show();
 			$mangaList.addClass('disable_dom');
 
 			var _this = $(this),			// Cache self
@@ -327,6 +327,10 @@
 					}
 				});
 			}
+		});
+
+		$('#toggle_menu').on('click', function() {
+			$('#sidebar').slideToggle('fast');
 		});
 
 		$(document).on('click', '.modal_fullscreen', function(e) {

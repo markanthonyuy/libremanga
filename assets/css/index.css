@@ -5216,6 +5216,130 @@ a.badge:focus {
   font-family: 'Trade Winds';
   src: url("../fonts/Trade_Winds/TradeWinds-Regular.ttf?") format("truetype"); }
 
+@media (max-width: 480px) {
+  .mobile {
+    display: block !important; }
+
+  #mobile_header {
+    padding-left: 10px;
+    margin-bottom: 0;
+    border-bottom: 1px solid #cccccc; }
+    #mobile_header #mobile_home {
+      float: left;
+      font-family: "Trade Winds", arial;
+      color: #0f0f0f;
+      text-decoration: none;
+      font-size: 30px; }
+    #mobile_header #toggle_menu {
+      float: right;
+      margin: 0 10px 0;
+      width: 30px;
+      height: 30px;
+      background: #eeeeee;
+      border: 1px solid #d4d4d4;
+      text-align: center;
+      line-height: 30px;
+      font-size: 14px; }
+      #mobile_header #toggle_menu:hover {
+        text-decoration: none; }
+    #mobile_header::after {
+      content: '';
+      clear: both;
+      display: block; }
+
+  #sidebar {
+    display: none;
+    position: relative !important;
+    width: 100% !important;
+    height: 300px !important;
+    border-bottom: 10px solid #eeeeee;
+    margin-bottom: 10px; }
+    #sidebar h3 {
+      font-size: 20px; }
+    #sidebar #sort_manga {
+      position: absolute;
+      right: 20px;
+      top: 30px; }
+      #sidebar #sort_manga li {
+        font-size: 14px !important;
+        line-height: 18px !important; }
+    #sidebar #manga_list {
+      padding-bottom: 0 !important; }
+      #sidebar #manga_list li a {
+        font-size: 18px;
+        line-height: 20px; }
+
+  #content {
+    margin-left: 0 !important;
+    width: 100%; }
+    #content .main_heading {
+      display: none; }
+    #content .main_description {
+      font-size: 22px;
+      line-height: 30px;
+      padding: 10px; }
+    #content .shoutout {
+      margin-top: 20px !important; }
+      #content .shoutout .tag_line {
+        display: block;
+        font-size: 16px; }
+    #content .libre_manga_note {
+      margin-top: 30px !important;
+      padding: 10px; }
+
+  #main_footer {
+    display: none; }
+
+  #mobile_footer {
+    font-size: 13px;
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #cccccc;
+    padding: 5px 0 5px 0;
+    text-align: center;
+    font-family: Share,arial; }
+
+  .small_modal {
+    position: absolute !important;
+    width: 100% !important;
+    margin: 0 !important;
+    left: 0 !important; }
+
+  #manga_details_wrap header {
+    display: none; }
+  #manga_details_wrap h3, #manga_details_wrap h4 {
+    padding-left: 10px; }
+  #manga_details_wrap .manga_details {
+    overflow: visible !important;
+    padding: 10px; }
+    #manga_details_wrap .manga_details img {
+      display: block;
+      margin: 0 auto !important;
+      float: none !important; }
+    #manga_details_wrap .manga_details .manga_desc, #manga_details_wrap .manga_details .manga_more_info, #manga_details_wrap .manga_details span {
+      font-size: 16px;
+      line-height: 24px; }
+  #manga_details_wrap #manga_chapters_list {
+    list-style: none;
+    margin-left: 10px !important;
+    -webkit-column-count: 1 !important;
+    -moz-column-count: 1 !important;
+    column-count: 1 !important; }
+    #manga_details_wrap #manga_chapters_list li {
+      font-size: 16px !important; }
+
+  .loader {
+    left: 0 !important; }
+    .loader .dark {
+      display: none; }
+
+  .big_modal {
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin-left: 0; }
+    .big_modal .modal-footer {
+      display: none; } }
 @-webkit-keyframes shiver {
   25% {
     -webkit-transform: translateY(4%);
@@ -5279,6 +5403,10 @@ a.badge:focus {
     -moz-transform: translateY(-2%);
     transform: translateY(-2%); } }
 
+@media (min-width: 480px) {
+  #sidebar {
+    display: block !important;
+    visibility: visible !important; } }
 html {
   height: 100%;
   width: 100%; }
@@ -5454,7 +5582,7 @@ html {
       clear: both;
       display: block; }
   #content #main_header #manga_details_wrap #manga_chapters_list {
-    margin-left: 0;
+    margin: 0;
     -webkit-column-count: 3;
     -moz-column-count: 3;
     column-count: 3; }
@@ -5494,6 +5622,11 @@ html {
         -webkit-transform: translateY(2%);
         -moz-transform: translateY(2%);
         transform: translateY(2%); }
+      @media (max-width: 480px) {
+        #content #main_header .shoutout .facebook {
+          width: 100px;
+          font-size: 14px;
+          padding: 5px 0 5px 0; } }
     #content #main_header .shoutout .twitter {
       background: #b2ffe5;
       color: steelblue;
@@ -5521,20 +5654,25 @@ html {
         -webkit-transform: translateY(2%);
         -moz-transform: translateY(2%);
         transform: translateY(2%); }
+      @media (max-width: 480px) {
+        #content #main_header .shoutout .twitter {
+          width: 100px;
+          font-size: 14px;
+          padding: 5px 0 5px 0; } }
     #content #main_header .shoutout .google {
-      background: #3333ff;
+      background: #ff3333;
       color: white;
       font-size: 18px;
       font-family: "Share", arial;
       display: inline-block;
       width: 150px;
       padding: 10px 0 10px 0;
-      border: 1px solid #0000e6;
+      border: 1px solid #e60000;
       text-align: center;
       border-radius: 5px;
-      -webkit-box-shadow: 0 8px 8px -5px #0000cc;
-      -moz-box-shadow: 0 8px 8px -5px #0000cc;
-      box-shadow: 0 8px 8px -5px #0000cc;
+      -webkit-box-shadow: 0 8px 8px -5px #cc0000;
+      -moz-box-shadow: 0 8px 8px -5px #cc0000;
+      box-shadow: 0 8px 8px -5px #cc0000;
       -webkit-transition: all 0.1s;
       -moz-transition: all 0.1s;
       transition: all 0.1s;
@@ -5548,6 +5686,11 @@ html {
         -webkit-transform: translateY(2%);
         -moz-transform: translateY(2%);
         transform: translateY(2%); }
+      @media (max-width: 480px) {
+        #content #main_header .shoutout .google {
+          width: 100px;
+          font-size: 14px;
+          padding: 5px 0 5px 0; } }
   #content #main_header .libre_manga_note {
     margin-top: 100px; }
 
@@ -5666,3 +5809,6 @@ html {
 
 .icon-resize-small {
   vertical-align: -1px !important; }
+
+.mobile {
+  display: none; }

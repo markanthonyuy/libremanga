@@ -1,5 +1,6 @@
 @import 'lib/bootstrap';
 @import 'lib/vars';
+@import 'lib/media_max_480';
 
 @mixin prefix_translate_y($value: '10%') {
 	-webkit-transform: translateY($value);
@@ -27,7 +28,12 @@
 	75% { @include prefix_translate_y(2%);}
 	100% { @include prefix_translate_y(-2%);}
 }
-
+@media (min-width: 480px) {
+	#sidebar {
+		display: block !important;
+		visibility: visible !important;
+	}
+}
 
 @mixin shoutout_button($bg_color : $main_color, $font_color : #fff) {
 	background: lighten($bg_color, 10%);
@@ -58,6 +64,11 @@
 		   -moz-transform: translateY(2%);
 		        transform: translateY(2%);
 	}
+	@media (max-width: 480px) {
+		width:100px;
+		font-size: 14px;
+		padding:5px 0 5px 0;
+	}
 }
 
 @mixin occupy_screen() {
@@ -69,14 +80,14 @@ html {
 	@include occupy_screen;
 	body {
 		@include occupy_screen;
-		 #wrap {
+		#wrap {
 		 	overflow: auto;
 			@include occupy_screen;
 			&::after {
 				content: '';
 				clear:both;
 				display: block;
-		}
+			}
 		}
 	}
 }
@@ -137,8 +148,6 @@ html {
 		}
 	}
 }
-
-
 
 #sidebar {
 	background: desaturate(#eee, 50%);
@@ -298,7 +307,7 @@ html {
 				}
 			}
 			#manga_chapters_list {
-				margin-left: 0;
+				margin: 0;
 				-webkit-column-count:3;
 				   -moz-column-count:3;
 						column-count:3;
@@ -323,7 +332,7 @@ html {
 				@include shoutout_button($green_color, $main_color);
 			}
 			.google {
-				@include shoutout_button(blue);
+				@include shoutout_button(red);
 			}
 		}
 		.libre_manga_note {
@@ -460,3 +469,5 @@ html {
 .icon-resize-small {
 	vertical-align: -1px !important;
 }
+
+.mobile { display: none;}

@@ -348,7 +348,9 @@ html {
 	background: #fff;
 	position: fixed;
 	height:39px;
-	width: 73%;
+	width: inherit;
+	right: 0;
+	left: 300px;
 	border-bottom: 1px solid #ccc;
 	h3 {
 		&::after {

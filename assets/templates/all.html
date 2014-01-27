@@ -58,7 +58,7 @@
 						real_month = (month < 10) ? '0' + month : month;
 						real_day = (day < 10) ? '0' + day : day;
 				%>
-				<li><a href="#manga_chapter=<%= chapter[3] %>" role="button" class="manga_chapter" data-toggle="modal" data-id="<%= chapter[3] %>" data-chapter="<%= chapter[0] %>" data-manga-title="<%= title %>">Chapter <%= chapter[0] %></a> - <%= real_month %>/<%= real_day %>/<%= year %> 
+				<li><a href="#/manga_chapter/<%= chapter[3] %>" role="button" class="manga_chapter" data-toggle="modal" data-id="<%= chapter[3] %>" data-chapter="<%= chapter[0] %>" data-manga-title="<%= title %>">Chapter <%= chapter[0] %></a> - <%= real_month %>/<%= real_day %>/<%= year %> 
 					<% if(chapter[2] == null || chapter[2] == '' || $.isNumeric(chapter[2])) { %> 
 						<b>(No Title)</b>
 					<% } else { %>
@@ -104,7 +104,7 @@
 <script type="text/template" id="manga_list_temp_sorted_hot">
 	<% _.each(list, function(item) { %>
 		<li>
-			<a href="#manga=<%= item.id %>" class="manga" data-id="<%= item.id %>"><%= item.name %></a>
+			<a href="#/manga/<%= item.id %>" class="manga" data-id="<%= item.id %>"><%= item.name %></a>
 			<% if(item.hot) { %>
 				<span class="label label-important">HOT</span>
 			<% } %>
@@ -115,7 +115,7 @@
 <script type="text/template" id="manga_list_temp_sorted_name">
 	<% _.each(_.sortBy(list, 'name'), function(item) { %>
 		<li>
-			<a href="#manga=<%= item.id %>" class="manga" data-id="<%= item.id %>"><%= item.name %></a>
+			<a href="#/manga/<%= item.id %>" class="manga" data-id="<%= item.id %>"><%= item.name %></a>
 			<% if(item.hot) { %>
 				<span class="label label-important">HOT</span>
 			<% } %>

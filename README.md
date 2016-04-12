@@ -5,6 +5,6 @@ Libre Manga is my personal project and inspired by my co-workers Kevin and Raven
 
 ##Libre Manga is currently in development
 
-I'm still in the course of developing **Libre Manga**. I'm suppose to implement Backbonejs for this project but I might add that in the later part since I'm still new to Backbonejs. I love exploring things and putting it all together in my project. As you can see I preffer simple design.
+I'm still in the course of developing **Libre Manga**. I'm suppose to implement Backbonejs for this project but I might add that in the later part since I'm still new to Backbonejs. I love exploring things and putting it all together in my project. As you can see I prefer simple design.
 
 Visit [site] (http://libremanga.ap01.aws.af.cm/)
